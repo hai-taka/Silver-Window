@@ -45,7 +45,7 @@ The JSON file can be previewed by clicking the play button.
 
 Colors and widths can  be customized from within the editor.
 
-To change the textbox font, change the RichTextLabel `normal font` property of the `window_theme` theme.
+To change the textbox font, change the RichTextLabel `normal_font` property of the `window_theme` theme.
 
 ![Window theme](screenshots/textbox-font.png)
 
