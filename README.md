@@ -69,6 +69,12 @@ To add a chapter to the game, add the path to the first JSON file of the chapter
 
 A demo game consisting of three chapters is including in the project.
 
+Left-click / spacebar is used to advance the text. 
+
+Escape brings up the pause menu.
+
+An options menu and a save / load system are included in the project.
+
 ## Contact
 
 If you have any questions about using the editor, email me at haitaka_silver@proton.me
