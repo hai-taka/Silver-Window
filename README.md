@@ -4,7 +4,7 @@ A visual editor within Godot 4.0.4 for displaying text and images in the style o
 
 (Disclaimer: This project has no affiliation with the Silver Case, the Film Window engine, or Grasshopper Manufacture. It merely attempts to recreate the look and feel of the Silver Case games. No code or assets have been taken from the Silver Case or the Film Window engine.)
 
-![main menu](screenshots/main-menu-crop.gif)
+![main menu](screenshots/main-menu.gif)
 
 ![hello-world gif](screenshots/hello-world.gif)
 
