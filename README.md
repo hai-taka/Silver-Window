@@ -69,7 +69,7 @@ To add a chapter to the game, add the path to the first JSON file of the chapter
 
 A demo game consisting of three chapters is including in the project.
 
-Left-click / spacebar is used to advance the text. 
+Left-click / spacebar is used to advance the text.
 
 Escape brings up the pause menu.
 
