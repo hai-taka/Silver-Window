@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbh3h2wcj82i7"]
+
+[ext_resource type="Theme" uid="uid://1h40sciui403" path="res://themes/main_menu_theme.tres" id="1_lkr5x"]
+[ext_resource type="Script" path="res://post_end_card.gd" id="1_wwpai"]
+
+[node name="PostEndCard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lkr5x")
+script = ExtResource("1_wwpai")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="OuterMargin" type="MarginContainer" parent="CenterContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="TempPanel" type="PanelContainer" parent="CenterContainer/OuterMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+metadata/_edit_lock_ = true

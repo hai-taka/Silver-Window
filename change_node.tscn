@@ -1,0 +1,120 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3vjrj0bawgec"]
+
+[ext_resource type="Script" path="res://change_node.gd" id="1_byy38"]
+
+[node name="ChangeNode" type="GraphNode" groups=["change_nodes", "graph_nodes", "no_controls"]]
+custom_minimum_size = Vector2(500, 0)
+offset_right = 36.0
+offset_bottom = 54.0
+title = "Change Image Node"
+show_close = true
+resizable = true
+slot/0/left_enabled = true
+slot/0/left_type = 4
+slot/0/left_color = Color(0.584314, 0.564706, 0.741176, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 5
+slot/0/right_color = Color(0.819608, 0.764706, 0.956863, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_byy38")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "New Image"
+vertical_alignment = 1
+
+[node name="ClearButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Clear"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="OpenButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Open"
+
+[node name="PathLineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Image Path"
+editable = false
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(87, 0)
+layout_mode = 2
+text = "Delay"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Delay Before"
+vertical_alignment = 1
+
+[node name="DelayBefore" type="SpinBox" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 10.0
+step = 0.05
+alignment = 3
+suffix = "sec"
+select_all_on_focus = true
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Delay After"
+vertical_alignment = 1
+
+[node name="DelayAfter" type="SpinBox" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 10.0
+step = 0.05
+alignment = 3
+suffix = "sec"
+select_all_on_focus = true
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+size = Vector2i(700, 500)
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.jpg, *.jpeg, *.png")
+
+[connection signal="close_request" from="." to="." method="_on_close_request"]
+[connection signal="position_offset_changed" from="." to="." method="_on_position_offset_changed"]
+[connection signal="resize_request" from="." to="." method="_on_resize_request"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/OpenButton" to="." method="_on_open_button_pressed"]
+[connection signal="text_changed" from="VBoxContainer/VBoxContainer/HBoxContainer2/PathLineEdit" to="." method="_on_path_line_edit_text_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/DelayBefore" to="." method="_on_delay_before_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/DelayAfter" to="." method="_on_delay_after_value_changed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

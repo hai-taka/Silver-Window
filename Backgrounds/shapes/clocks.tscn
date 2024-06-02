@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6locit1rfqml"]
+
+[ext_resource type="Script" path="res://Backgrounds/shapes/clocks.gd" id="1_hrm6w"]
+[ext_resource type="Texture2D" uid="uid://b7xgxxdbxqabq" path="res://Backgrounds/shapes/textures/clock_circle.png" id="2_a43r6"]
+[ext_resource type="Texture2D" uid="uid://ci4i33j1273m1" path="res://Backgrounds/shapes/textures/hour2.png" id="3_dyfcd"]
+[ext_resource type="Texture2D" uid="uid://d32kghd0i7tia" path="res://Backgrounds/shapes/textures/clock_minute.png" id="4_cuk12"]
+
+[node name="Clocks" type="Control"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_hrm6w")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Circle" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+mouse_filter = 2
+texture = ExtResource("2_a43r6")
+stretch_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Hour" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+mouse_filter = 2
+texture = ExtResource("3_dyfcd")
+stretch_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Minute" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+mouse_filter = 2
+texture = ExtResource("4_cuk12")
+stretch_mode = 3
+metadata/_edit_lock_ = true

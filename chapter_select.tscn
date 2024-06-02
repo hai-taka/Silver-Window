@@ -1,0 +1,103 @@
+[gd_scene load_steps=4 format=3 uid="uid://xe6l4onq40kp"]
+
+[ext_resource type="Theme" uid="uid://1h40sciui403" path="res://themes/main_menu_theme.tres" id="1_87q1x"]
+[ext_resource type="Script" path="res://chapter_select.gd" id="1_rpia6"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_twb3s"]
+color = Color(0.752941, 0.752941, 0.752941, 1)
+thickness = 2
+
+[node name="ChapterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_87q1x")
+script = ExtResource("1_rpia6")
+new_chapter_color = Color(1, 0.109804, 0.482353, 1)
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="OuterMargin" type="MarginContainer" parent="CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 0
+metadata/_edit_lock_ = true
+
+[node name="ChapterPanel" type="PanelContainer" parent="CenterContainer/OuterMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="InnerMargin" type="MarginContainer" parent="CenterContainer/OuterMargin/ChapterPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/OuterMargin/ChapterPanel/InnerMargin"]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/OuterMargin/ChapterPanel/InnerMargin/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="ChapterVBox" type="VBoxContainer" parent="CenterContainer/OuterMargin/ChapterPanel/InnerMargin/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="EndHSep" type="HSeparator" parent="CenterContainer/OuterMargin/ChapterPanel/InnerMargin/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_twb3s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/OuterMargin/ChapterPanel/InnerMargin/VBoxContainer"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+alignment = 1
+
+[node name="BackButton" type="Button" parent="CenterContainer/OuterMargin/ChapterPanel/InnerMargin/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_right = NodePath(".")
+text = "Back"
+
+[connection signal="pressed" from="CenterContainer/OuterMargin/ChapterPanel/InnerMargin/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

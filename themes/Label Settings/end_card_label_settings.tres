@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b2nvd6il6qb87"]
+
+[ext_resource type="FontFile" uid="uid://dkibe7mf88b6d" path="res://fonts/Dynamic/Silver/Silver.ttf" id="1_dm8ul"]
+
+[resource]
+font = ExtResource("1_dm8ul")
+font_size = 128

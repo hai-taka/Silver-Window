@@ -1,0 +1,792 @@
+{
+	"0": {
+		"25 line color": "ffffffff",
+		"25 text color": "ffffffff",
+		"auto_lines": true,
+		"auto_width": true,
+		"bg dict": {
+			"anim color": "000000ff",
+			"animation": 0,
+			"bott color": "bb4333ff",
+			"bott offset": 91,
+			"line color 1": "000000ff",
+			"line color 2": "000000ff",
+			"line color 3": "000000ff",
+			"line color 4": "000000ff",
+			"path": "",
+			"ripple delay": 6,
+			"solid color": "434343ff",
+			"top color": "1c2c7bff",
+			"top offset": 21,
+			"type": 1
+		},
+		"border color": "d10101ff",
+		"border width": 2,
+		"box bg color": "000000ff",
+		"cursor color": "b1b1b1ff",
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": true,
+			"sound path": "res://audio/music/background_track-01.mp3"
+		},
+		"end picture": false,
+		"frame color": "ffffffe6",
+		"frame preset dict": {
+
+		},
+		"frame preset id": 1,
+		"frame width": 2,
+		"include size": false,
+		"lines": 1,
+		"loc bg color": "c0c0c0ff",
+		"loc text color": "000000ff",
+		"location dict": {
+			"chapter": "Chapter",
+			"loc 1": "Location",
+			"loc 2": "",
+			"loc 3": "",
+			"loc 4": "",
+			"show": false,
+			"type": 0
+		},
+		"margin dict": {
+			"bottom": 20,
+			"left": 20,
+			"pair lr": false,
+			"pair tb": false,
+			"right": 20,
+			"show": true,
+			"top": 100
+		},
+		"name": "",
+		"name color": "dbdbdbff",
+		"new": true,
+		"node name": "DialogueNode",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 375,
+		"pos y": 498,
+		"position offset dict": {
+			"@DialogueNode@1336": {
+				"x": 2200,
+				"y": 280
+			},
+			"@DialogueNode@1570": {
+				"x": 2920,
+				"y": 320
+			},
+			"@DialogueNode@1804": {
+				"x": 3780,
+				"y": 400
+			},
+			"@DialogueNode@2038": {
+				"x": 4480,
+				"y": 420
+			},
+			"@DialogueNode@2272": {
+				"x": 5240,
+				"y": 400
+			},
+			"@DialogueNode@2506": {
+				"x": 6020,
+				"y": 420
+			},
+			"@DialogueNode@2740": {
+				"x": 6780,
+				"y": 420
+			},
+			"@DialogueNode@2974": {
+				"x": 7520,
+				"y": 420
+			},
+			"@DialogueNode@3411": {
+				"x": 8400,
+				"y": 540
+			},
+			"@DialogueNode@3645": {
+				"x": 9240,
+				"y": 580
+			},
+			"@DialogueNode@4082": {
+				"x": 10240,
+				"y": 680
+			},
+			"@DialogueNode@4722": {
+				"x": 11080,
+				"y": 620
+			},
+			"@DialogueNode@4956": {
+				"x": 11900,
+				"y": 640
+			},
+			"@DialogueNode@901": {
+				"x": 1320,
+				"y": 300
+			},
+			"@PictureNode@3177": {
+				"x": 7720,
+				"y": 1380
+			},
+			"@PictureNode@3848": {
+				"x": 9220,
+				"y": 1500
+			},
+			"@PictureNode@4285": {
+				"x": 10300,
+				"y": 1680
+			},
+			"@PictureNode@4488": {
+				"x": 10860,
+				"y": 2280
+			},
+			"DialogueNode": {
+				"x": 500,
+				"y": 320
+			},
+			"PictureNode": {
+				"x": 4080,
+				"y": 1620
+			},
+			"TransitionNode": {
+				"x": 12760,
+				"y": 960
+			}
+		},
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Picture Nodes are used to display pictures.",
+		"text color": "b1b1b1ff",
+		"text preset dict": {
+
+		},
+		"text preset id": 1,
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1118,
+		"wipe color": "d10101ff"
+	},
+	"1": {
+		"auto_lines": true,
+		"auto_width": true,
+		"center x": [
+			true
+		],
+		"center y": [
+			false
+		],
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"fade in": [
+			false
+		],
+		"fade in color": [
+			"000000ff"
+		],
+		"fade in duration": [
+			3
+		],
+		"fade in solid": [
+			true
+		],
+		"fade out": [
+			false
+		],
+		"fade out color": [
+			"000000ff"
+		],
+		"fade out duration": [
+			1
+		],
+		"fade out solid": [
+			true
+		],
+		"include size": false,
+		"lines": 2,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@901",
+		"paired": false,
+		"pics to move": [],
+		"picture path": [
+			"res://assets/godot_icon_500_blue.jpg"
+		],
+		"picture pos x": [
+			708
+		],
+		"picture pos y": [
+			120
+		],
+		"picture size x": [
+			504
+		],
+		"picture size y": [
+			504
+		],
+		"picture to start": [
+			"PictureNode"
+		],
+		"pos x": 375,
+		"pos y": 760,
+		"show frame": false,
+		"sound dict": [
+			{
+				"await sound": true,
+				"new track": false,
+				"play sound": false,
+				"sound path": ""
+			}
+		],
+		"speaker option": 0,
+		"start picture": true,
+		"text": "These pictures aren't tied to a textbox.\nThey stay on screen until you dismiss them.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1118
+	},
+	"10": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": true,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@3411",
+		"paired": false,
+		"pics to move": [],
+		"picture to end": [
+			"@PictureNode@3177"
+		],
+		"pos x": 817,
+		"pos y": 800,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Fade out.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 234
+	},
+	"11": {
+		"auto_lines": true,
+		"auto_width": true,
+		"center x": [
+			true
+		],
+		"center y": [
+			false
+		],
+		"dialogue center x": false,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"fade in": [
+			false
+		],
+		"fade in color": [
+			"000000ff"
+		],
+		"fade in duration": [
+			3
+		],
+		"fade in solid": [
+			true
+		],
+		"fade out": [
+			false
+		],
+		"fade out color": [
+			"000000ff"
+		],
+		"fade out duration": [
+			1
+		],
+		"fade out solid": [
+			true
+		],
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@3645",
+		"paired": false,
+		"pics to move": [],
+		"picture path": [
+			"res://assets/godot_icon_500_red.jpg"
+		],
+		"picture pos x": [
+			708
+		],
+		"picture pos y": [
+			200
+		],
+		"picture size x": [
+			504
+		],
+		"picture size y": [
+			504
+		],
+		"picture to start": [
+			"@PictureNode@3848"
+		],
+		"pos x": 960,
+		"pos y": 800,
+		"show frame": false,
+		"sound dict": [
+			{
+				"await sound": true,
+				"new track": false,
+				"play sound": true,
+				"sound path": "res://audio/sfx/other/random (2).wav"
+			}
+		],
+		"speaker option": 0,
+		"start picture": true,
+		"text": "Picture that plays a sound.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 702
+	},
+	"12": {
+		"auto_lines": true,
+		"auto_width": true,
+		"center x": [
+			false,
+			false
+		],
+		"center y": [
+			false,
+			false
+		],
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": true,
+		"fade in": [
+			false,
+			false
+		],
+		"fade in color": [
+			"000000ff",
+			"000000ff"
+		],
+		"fade in duration": [
+			3,
+			3
+		],
+		"fade in solid": [
+			true,
+			true
+		],
+		"fade out": [
+			false,
+			false
+		],
+		"fade out color": [
+			"000000ff",
+			"000000ff"
+		],
+		"fade out duration": [
+			1,
+			1
+		],
+		"fade out solid": [
+			true,
+			true
+		],
+		"include size": false,
+		"lines": 2,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@4082",
+		"paired": false,
+		"pics to move": [],
+		"picture path": [
+			"res://assets/godot_icon_500_blue.jpg",
+			"res://assets/godot_icon_500_green.jpg"
+		],
+		"picture pos x": [
+			390,
+			970
+		],
+		"picture pos y": [
+			120,
+			120
+		],
+		"picture size x": [
+			504,
+			504
+		],
+		"picture size y": [
+			504,
+			504
+		],
+		"picture to end": [
+			"@PictureNode@3848"
+		],
+		"picture to start": [
+			"@PictureNode@4285",
+			"@PictureNode@4488"
+		],
+		"pos x": 388,
+		"pos y": 800,
+		"show frame": false,
+		"sound dict": [
+			{
+				"await sound": true,
+				"new track": false,
+				"play sound": false,
+				"sound path": ""
+			},
+			{
+				"await sound": true,
+				"new track": false,
+				"play sound": false,
+				"sound path": ""
+			}
+		],
+		"speaker option": 0,
+		"start picture": true,
+		"text": "Multiple pictures can also be added at the\nsame time.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1092
+	},
+	"13": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": false,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 2,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@4722",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 390,
+		"pos y": 680,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "By using a picture's \"align margins\" property,\nyou can align a textbox with the picture's edge.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1248
+	},
+	"14": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@4956",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 466,
+		"pos y": 800,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Next, we'll take about Update Nodes.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 936
+	},
+	"15": {
+		"node name": "TransitionNode",
+		"trans dict": {
+			"end card": false,
+			"fade duration": 3,
+			"line color": "1100d6ff",
+			"moon color": "c0c0c0ff",
+			"moon phrase": "",
+			"next script": "res://JSONs/demo/picture_demo/picture-demo-2.json",
+			"phrase color": "ffffffff",
+			"trans type": 1
+		},
+		"type": "transition"
+	},
+	"2": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@1336",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 531,
+		"pos y": 800,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "If you leave a textbox blank...",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 806
+	},
+	"3": {
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"node name": "@DialogueNode@1570",
+		"pics to move": [],
+		"start picture": false,
+		"type": "blank"
+	},
+	"4": {
+		"auto_lines": false,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 4,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@1804",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 297,
+		"pos y": 690,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "The box will be hidden, but will still require an\ninput from the player to advance the script.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1274
+	},
+	"5": {
+		"auto_width": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"name": "",
+		"new": false,
+		"node name": "@DialogueNode@2038",
+		"pics to move": [],
+		"speaker option": 0,
+		"start picture": false,
+		"text": "This is useful if you want to display a picture\non its own.",
+		"type": "text",
+		"width": 1222,
+		"wipe": false
+	},
+	"6": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 2,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@2272",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 349,
+		"pos y": 800,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Pictures can be dismissed by connecting them\nto the \"End Picture\" slot of a Dialogue Node.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1170
+	},
+	"7": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": true,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@2506",
+		"paired": false,
+		"pics to move": [],
+		"picture to end": [
+			"PictureNode"
+		],
+		"pos x": 830,
+		"pos y": 800,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Like so.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 208
+	},
+	"8": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 2,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@2740",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 258,
+		"pos y": 800,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "A picture can fade in, fade out, play sound effects,\nand change the BGM.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1352
+	},
+	"9": {
+		"auto_lines": true,
+		"auto_width": true,
+		"center x": [
+			true
+		],
+		"center y": [
+			false
+		],
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"fade in": [
+			true
+		],
+		"fade in color": [
+			"000000ff"
+		],
+		"fade in duration": [
+			3
+		],
+		"fade in solid": [
+			true
+		],
+		"fade out": [
+			true
+		],
+		"fade out color": [
+			"000000ff"
+		],
+		"fade out duration": [
+			1
+		],
+		"fade out solid": [
+			true
+		],
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@2974",
+		"paired": false,
+		"pics to move": [],
+		"picture path": [
+			"res://assets/godot_icon_500_green.jpg"
+		],
+		"picture pos x": [
+			708
+		],
+		"picture pos y": [
+			200
+		],
+		"picture size x": [
+			504
+		],
+		"picture size y": [
+			504
+		],
+		"picture to start": [
+			"@PictureNode@3177"
+		],
+		"pos x": 830,
+		"pos y": 800,
+		"show frame": false,
+		"sound dict": [
+			{
+				"await sound": true,
+				"new track": false,
+				"play sound": false,
+				"sound path": ""
+			}
+		],
+		"speaker option": 0,
+		"start picture": true,
+		"text": "Fade in.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 208
+	}
+}

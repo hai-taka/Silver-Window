@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://3opj4u1y17uy"]
+
+[ext_resource type="Script" path="res://Backgrounds/shapes/wave.gd" id="1_1lm08"]
+[ext_resource type="Texture2D" uid="uid://cjknipebn6b2u" path="res://Backgrounds/shapes/textures/circle-1080-5.png" id="2_yjyih"]
+
+[node name="Wave" type="MarginContainer"]
+offset_right = 1080.0
+offset_bottom = 1080.0
+mouse_filter = 2
+theme_override_constants/margin_left = 540
+theme_override_constants/margin_right = 540
+script = ExtResource("1_1lm08")
+metadata/_edit_lock_ = true
+
+[node name="Circle" type="TextureRect" parent="."]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_yjyih")
+expand_mode = 1
+stretch_mode = 5

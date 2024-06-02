@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dsc10ieen2nx6"]
+
+[ext_resource type="Script" path="res://resources/Data/main_menu_colors.gd" id="1_02bkg"]
+
+[resource]
+script = ExtResource("1_02bkg")
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0.752941, 0.752941, 0.752941, 1)
+label_color = Color(1, 1, 1, 1)
+button_reg_color = Color(0.501961, 0.501961, 0.501961, 1)
+button_focus_color = Color(1, 1, 1, 1)
+shake_color = Color(0.898039, 0.0901961, 0.0901961, 1)
+file_select_border_color = Color(0.898039, 0.0901961, 0.0901961, 1)

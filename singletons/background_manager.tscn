@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb3y6rematc1g"]
+
+[ext_resource type="Script" path="res://singletons/background_manager.gd" id="1_kvhyg"]
+
+[node name="BackgroundManager" type="CanvasLayer"]
+layer = -1
+script = ExtResource("1_kvhyg")

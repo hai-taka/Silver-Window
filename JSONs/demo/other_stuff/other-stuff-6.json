@@ -1,0 +1,108 @@
+{
+	"0": {
+		"25 line color": "ffffffff",
+		"25 text color": "ffffffff",
+		"auto_lines": true,
+		"auto_width": true,
+		"bg dict": {
+			"anim color": "bababaff",
+			"animation": 3,
+			"bott color": "c76787ff",
+			"bott offset": 69,
+			"line color 1": "000000ff",
+			"line color 2": "000000ff",
+			"line color 3": "000000ff",
+			"line color 4": "000000ff",
+			"path": "",
+			"ripple delay": 6,
+			"solid color": "bfaf7cff",
+			"top color": "5b4a75ff",
+			"top offset": 21,
+			"type": 1
+		},
+		"border color": "90109eff",
+		"border width": 2,
+		"box bg color": "000000ff",
+		"cursor color": "b1b1b1ff",
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"frame color": "ffffffe6",
+		"frame preset dict": {
+
+		},
+		"frame preset id": 1,
+		"frame width": 2,
+		"include size": false,
+		"lines": 2,
+		"loc bg color": "85268aff",
+		"loc text color": "000000ff",
+		"location dict": {
+			"chapter": "Chapter",
+			"loc 1": "Location",
+			"loc 2": "",
+			"loc 3": "",
+			"loc 4": "",
+			"show": false,
+			"type": 0
+		},
+		"margin dict": {
+			"bottom": 20,
+			"left": 20,
+			"pair lr": false,
+			"pair tb": false,
+			"right": 20,
+			"show": true,
+			"top": 100
+		},
+		"name": "",
+		"name color": "dbdbdbff",
+		"new": true,
+		"node name": "DialogueNode",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 323,
+		"pos y": 463,
+		"position offset dict": {
+			"DialogueNode": {
+				"x": 495,
+				"y": 358.75
+			},
+			"TransitionNode": {
+				"x": 1380,
+				"y": 660
+			}
+		},
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "There are also different options for background\nanimations.",
+		"text color": "b1b1b1ff",
+		"text preset dict": {
+
+		},
+		"text preset id": 1,
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1222,
+		"wipe color": "00d4caff"
+	},
+	"1": {
+		"node name": "TransitionNode",
+		"trans dict": {
+			"end card": false,
+			"fade duration": 1,
+			"line color": "c0c0c0ff",
+			"moon color": "c0c0c0ff",
+			"moon phrase": "",
+			"next script": "res://JSONs/demo/other_stuff/other-stuff-7.json",
+			"phrase color": "ffffffff",
+			"trans type": 2
+		},
+		"type": "transition"
+	}
+}

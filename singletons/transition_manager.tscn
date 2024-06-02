@@ -1,0 +1,1058 @@
+[gd_scene load_steps=16 format=3 uid="uid://blylmxr0v1s1m"]
+
+[ext_resource type="Script" path="res://singletons/transition_manager.gd" id="1_lfcus"]
+[ext_resource type="Script" path="res://singletons/fade.gd" id="2_gk358"]
+[ext_resource type="Texture2D" uid="uid://btknbp5iaoarq" path="res://assets/Textures/Curtain_Wipe/curtain_bg_right.png" id="2_su0he"]
+[ext_resource type="Texture2D" uid="uid://2su3gh8slpbb" path="res://assets/Textures/Curtain_Wipe/curtain_bg_left.png" id="3_85i6x"]
+[ext_resource type="Script" path="res://singletons/curtain_wipe.gd" id="3_mltwj"]
+[ext_resource type="Texture2D" uid="uid://cvw64dj4fsx1m" path="res://assets/Textures/Curtain_Wipe/curtain_bg_top.png" id="4_og6hh"]
+[ext_resource type="StyleBox" uid="uid://dg7glrh8x6bha" path="res://themes/Styleboxes/Lines/curtain_wipe_leading_line.tres" id="5_1pnxs"]
+[ext_resource type="Texture2D" uid="uid://bma8bnmetcd82" path="res://assets/Textures/Curtain_Wipe/curtain_bg_bottom.png" id="5_kc6kp"]
+[ext_resource type="StyleBox" uid="uid://p78jatfollia" path="res://themes/Styleboxes/Lines/curtain_wipe_leading_line_horiz.tres" id="8_nvfvu"]
+[ext_resource type="Script" path="res://singletons/right_static_line_control.gd" id="9_cmg0m"]
+[ext_resource type="StyleBox" uid="uid://cerftadxwj035" path="res://themes/Styleboxes/Lines/curtain_wipe_static_line.tres" id="9_lrhn8"]
+[ext_resource type="Script" path="res://singletons/left_static_line_control.gd" id="11_nwtog"]
+[ext_resource type="Script" path="res://singletons/bottom_static_lines.gd" id="13_302oh"]
+[ext_resource type="Script" path="res://singletons/top_static_lines.gd" id="13_vni33"]
+[ext_resource type="StyleBox" uid="uid://cw51xm0r5qmrc" path="res://themes/Styleboxes/Lines/curtain_wipe_static_line_horiz.tres" id="14_7wxvn"]
+
+[node name="TransitionManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_lfcus")
+h_leading_line_stylebox = ExtResource("8_nvfvu")
+h_static_line_stylebox = ExtResource("14_7wxvn")
+v_leading_line_stylebox = ExtResource("5_1pnxs")
+v_static_line_stylebox = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fade" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_gk358")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="FadeRect" type="ColorRect" parent="CanvasLayer/Fade"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="CurtainWipe" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_mltwj")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="RightCurtain" type="Control" parent="CanvasLayer/CurtainWipe"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 1920.0
+offset_right = 3940.0
+offset_bottom = 1080.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="RightCurtainBG" type="TextureRect" parent="CanvasLayer/CurtainWipe/RightCurtain"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_su0he")
+metadata/_edit_lock_ = true
+
+[node name="LeadingLineHBox" type="HBoxContainer" parent="CanvasLayer/CurtainWipe/RightCurtain"]
+z_index = 1
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="LeadingLine" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightCurtain/LeadingLineHBox"]
+self_modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("5_1pnxs")
+
+[node name="LeadingLine2" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightCurtain/LeadingLineHBox"]
+self_modulate = Color(1, 1, 1, 0.752941)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("5_1pnxs")
+
+[node name="LeadingLine3" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightCurtain/LeadingLineHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("5_1pnxs")
+
+[node name="LeadingLine4" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightCurtain/LeadingLineHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("5_1pnxs")
+
+[node name="LeadingLine5" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightCurtain/LeadingLineHBox"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.752941)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("5_1pnxs")
+
+[node name="LeftCurtain" type="Control" parent="CanvasLayer/CurtainWipe"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -2020.0
+offset_bottom = 1080.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="LeftCurtainBG" type="TextureRect" parent="CanvasLayer/CurtainWipe/LeftCurtain"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_85i6x")
+metadata/_edit_lock_ = true
+
+[node name="LeftLeadingHBox" type="HBoxContainer" parent="CanvasLayer/CurtainWipe/LeftCurtain"]
+z_index = 1
+layout_mode = 0
+offset_left = 1920.0
+offset_right = 2020.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="LeadingLine" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftCurtain/LeftLeadingHBox"]
+self_modulate = Color(1, 1, 1, 0.752941)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("5_1pnxs")
+
+[node name="LeadingLine2" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftCurtain/LeftLeadingHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("5_1pnxs")
+
+[node name="LeadingLine3" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftCurtain/LeftLeadingHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("5_1pnxs")
+
+[node name="LeadingLine4" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftCurtain/LeftLeadingHBox"]
+self_modulate = Color(1, 1, 1, 0.752941)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("5_1pnxs")
+
+[node name="LeadingLine5" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftCurtain/LeftLeadingHBox"]
+self_modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("5_1pnxs")
+
+[node name="TopCurtain" type="Control" parent="CanvasLayer/CurtainWipe"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1180.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="TopCurtainBG" type="TextureRect" parent="CanvasLayer/CurtainWipe/TopCurtain"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_og6hh")
+metadata/_edit_lock_ = true
+
+[node name="TopLeadingLinesBox" type="VBoxContainer" parent="CanvasLayer/CurtainWipe/TopCurtain"]
+z_index = 1
+layout_mode = 0
+offset_top = 1080.0
+offset_right = 1920.0
+offset_bottom = 1180.0
+metadata/_edit_lock_ = true
+
+[node name="LeadingLine" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopCurtain/TopLeadingLinesBox"]
+self_modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("8_nvfvu")
+
+[node name="LeadingLine2" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopCurtain/TopLeadingLinesBox"]
+self_modulate = Color(1, 1, 1, 0.752941)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("8_nvfvu")
+
+[node name="LeadingLine3" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopCurtain/TopLeadingLinesBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("8_nvfvu")
+
+[node name="LeadingLine4" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopCurtain/TopLeadingLinesBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("8_nvfvu")
+
+[node name="LeadingLine5" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopCurtain/TopLeadingLinesBox"]
+self_modulate = Color(1, 1, 1, 0.752941)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("8_nvfvu")
+
+[node name="BottomCurtain" type="Control" parent="CanvasLayer/CurtainWipe"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_top = -100.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="BottomCurtainBG" type="TextureRect" parent="CanvasLayer/CurtainWipe/BottomCurtain"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_kc6kp")
+metadata/_edit_lock_ = true
+
+[node name="BottLeadingLinesBox" type="VBoxContainer" parent="CanvasLayer/CurtainWipe/BottomCurtain"]
+z_index = 1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 100.0
+metadata/_edit_lock_ = true
+
+[node name="LeadingLine" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomCurtain/BottLeadingLinesBox"]
+self_modulate = Color(1, 1, 1, 0.752941)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("8_nvfvu")
+
+[node name="LeadingLine2" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomCurtain/BottLeadingLinesBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("8_nvfvu")
+
+[node name="LeadingLine3" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomCurtain/BottLeadingLinesBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("8_nvfvu")
+
+[node name="LeadingLine4" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomCurtain/BottLeadingLinesBox"]
+self_modulate = Color(1, 1, 1, 0.752941)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("8_nvfvu")
+
+[node name="LeadingLine5" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomCurtain/BottLeadingLinesBox"]
+self_modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("8_nvfvu")
+
+[node name="RightStaticLines" type="Control" parent="CanvasLayer/CurtainWipe"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_cmg0m")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="StaticLine" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_right = 92.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine2" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 96.0
+offset_right = 188.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine3" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 192.0
+offset_right = 284.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine4" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 288.0
+offset_right = 380.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine5" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 384.0
+offset_right = 476.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine6" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 480.0
+offset_right = 573.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine7" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 577.0
+offset_right = 669.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine8" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 673.0
+offset_right = 765.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine9" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 769.0
+offset_right = 861.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine10" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 865.0
+offset_right = 957.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine11" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 961.0
+offset_right = 1054.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine12" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 1058.0
+offset_right = 1150.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine13" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 1154.0
+offset_right = 1246.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine14" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 1250.0
+offset_right = 1342.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine15" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 1346.0
+offset_right = 1438.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine16" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 1442.0
+offset_right = 1535.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine17" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 1539.0
+offset_right = 1631.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine18" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 1635.0
+offset_right = 1727.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine19" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 1731.0
+offset_right = 1823.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine20" type="VSeparator" parent="CanvasLayer/CurtainWipe/RightStaticLines"]
+layout_mode = 2
+offset_left = 1827.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="LeftStaticLines" type="Control" parent="CanvasLayer/CurtainWipe"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_nwtog")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="StaticLine" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_right = 92.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine2" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 96.0
+offset_right = 188.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine3" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 192.0
+offset_right = 284.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine4" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 288.0
+offset_right = 380.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine5" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 384.0
+offset_right = 476.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine6" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 480.0
+offset_right = 573.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine7" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 577.0
+offset_right = 669.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine8" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 673.0
+offset_right = 765.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine9" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 769.0
+offset_right = 861.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine10" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 865.0
+offset_right = 957.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine11" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 961.0
+offset_right = 1054.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine12" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 1058.0
+offset_right = 1150.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine13" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 1154.0
+offset_right = 1246.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine14" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 1250.0
+offset_right = 1342.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine15" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 1346.0
+offset_right = 1438.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine16" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 1442.0
+offset_right = 1535.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine17" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 1539.0
+offset_right = 1631.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine18" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 1635.0
+offset_right = 1727.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine19" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 1731.0
+offset_right = 1823.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="StaticLine20" type="VSeparator" parent="CanvasLayer/CurtainWipe/LeftStaticLines"]
+layout_mode = 2
+offset_left = 1827.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("9_lrhn8")
+metadata/_edit_lock_ = true
+
+[node name="TopStaticLines" type="Control" parent="CanvasLayer/CurtainWipe"]
+unique_name_in_owner = true
+z_index = 1
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("13_vni33")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="StaticLine" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 59.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine2" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 63.0
+offset_right = 1920.0
+offset_bottom = 123.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine3" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 127.0
+offset_right = 1920.0
+offset_bottom = 187.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine4" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 191.0
+offset_right = 1920.0
+offset_bottom = 251.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine5" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 255.0
+offset_right = 1920.0
+offset_bottom = 314.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine6" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 318.0
+offset_right = 1920.0
+offset_bottom = 378.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine7" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 382.0
+offset_right = 1920.0
+offset_bottom = 442.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine8" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 446.0
+offset_right = 1920.0
+offset_bottom = 506.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine9" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 510.0
+offset_right = 1920.0
+offset_bottom = 569.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine10" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 573.0
+offset_right = 1920.0
+offset_bottom = 633.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine11" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 637.0
+offset_right = 1920.0
+offset_bottom = 697.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine12" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 701.0
+offset_right = 1920.0
+offset_bottom = 761.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine13" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 765.0
+offset_right = 1920.0
+offset_bottom = 824.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine14" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 828.0
+offset_right = 1920.0
+offset_bottom = 888.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine15" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 892.0
+offset_right = 1920.0
+offset_bottom = 952.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine16" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 956.0
+offset_right = 1920.0
+offset_bottom = 1016.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine17" type="HSeparator" parent="CanvasLayer/CurtainWipe/TopStaticLines"]
+layout_mode = 2
+offset_top = 1020.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="BottomStaticLines" type="Control" parent="CanvasLayer/CurtainWipe"]
+unique_name_in_owner = true
+z_index = 1
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("13_302oh")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="StaticLine" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 59.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine2" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 63.0
+offset_right = 1920.0
+offset_bottom = 123.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine3" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 127.0
+offset_right = 1920.0
+offset_bottom = 187.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine4" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 191.0
+offset_right = 1920.0
+offset_bottom = 251.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine5" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 255.0
+offset_right = 1920.0
+offset_bottom = 314.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine6" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 318.0
+offset_right = 1920.0
+offset_bottom = 378.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine7" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 382.0
+offset_right = 1920.0
+offset_bottom = 442.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine8" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 446.0
+offset_right = 1920.0
+offset_bottom = 506.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine9" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 510.0
+offset_right = 1920.0
+offset_bottom = 569.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine10" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 573.0
+offset_right = 1920.0
+offset_bottom = 633.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine11" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 637.0
+offset_right = 1920.0
+offset_bottom = 697.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine12" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 701.0
+offset_right = 1920.0
+offset_bottom = 761.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine13" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 765.0
+offset_right = 1920.0
+offset_bottom = 824.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine14" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 828.0
+offset_right = 1920.0
+offset_bottom = 888.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine15" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 892.0
+offset_right = 1920.0
+offset_bottom = 952.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine16" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 956.0
+offset_right = 1920.0
+offset_bottom = 1016.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="StaticLine17" type="HSeparator" parent="CanvasLayer/CurtainWipe/BottomStaticLines"]
+layout_mode = 2
+offset_top = 1020.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_vertical = 3
+theme_override_styles/separator = ExtResource("14_7wxvn")
+
+[node name="CurtainButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1800.0
+offset_top = 100.0
+offset_right = 1841.0
+offset_bottom = 131.0
+text = "Curtain"
+
+[node name="FadeButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1800.0
+offset_top = 200.0
+offset_right = 1845.0
+offset_bottom = 231.0
+text = "Fade"
+
+[connection signal="item_rect_changed" from="CanvasLayer/CurtainWipe/RightCurtain" to="CanvasLayer/CurtainWipe" method="_on_right_curtain_item_rect_changed"]
+[connection signal="item_rect_changed" from="CanvasLayer/CurtainWipe/LeftCurtain" to="CanvasLayer/CurtainWipe" method="_on_left_curtain_item_rect_changed"]
+[connection signal="item_rect_changed" from="CanvasLayer/CurtainWipe/TopCurtain" to="CanvasLayer/CurtainWipe" method="_on_top_curtain_item_rect_changed"]
+[connection signal="item_rect_changed" from="CanvasLayer/CurtainWipe/BottomCurtain" to="CanvasLayer/CurtainWipe" method="_on_bottom_curtain_item_rect_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine2" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_2_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine3" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_3_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine4" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_4_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine5" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_5_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine6" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_6_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine7" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_7_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine8" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_8_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine9" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_9_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine10" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_10_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine11" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_11_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine12" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_12_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine13" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_13_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine14" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_14_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine15" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_15_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine16" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_16_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine17" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_17_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine18" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_18_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine19" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_19_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/RightStaticLines/StaticLine20" to="CanvasLayer/CurtainWipe/RightStaticLines" method="_on_static_line_20_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine2" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_2_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine3" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_3_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine4" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_4_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine5" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_5_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine6" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_6_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine7" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_7_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine8" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_8_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine9" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_9_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine10" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_10_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine11" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_11_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine12" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_12_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine13" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_13_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine14" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_14_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine15" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_15_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine16" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_16_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine17" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_17_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine18" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_18_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine19" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_19_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/LeftStaticLines/StaticLine20" to="CanvasLayer/CurtainWipe/LeftStaticLines" method="_on_static_line_20_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine2" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_2_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine3" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_3_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine4" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_4_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine5" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_5_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine6" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_6_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine7" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_7_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine8" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_8_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine9" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_9_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine10" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_10_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine11" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_11_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine12" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_12_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine13" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_13_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine14" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_14_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine15" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_15_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine16" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_16_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/TopStaticLines/StaticLine17" to="CanvasLayer/CurtainWipe/TopStaticLines" method="_on_static_line_17_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine2" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_2_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine3" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_3_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine4" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_4_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine5" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_5_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine6" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_6_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine7" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_7_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine8" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_8_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine9" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_9_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine10" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_10_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine11" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_11_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine12" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_12_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine13" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_13_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine14" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_14_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine15" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_15_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine16" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_16_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/CurtainWipe/BottomStaticLines/StaticLine17" to="CanvasLayer/CurtainWipe/BottomStaticLines" method="_on_static_line_17_visibility_changed"]
+[connection signal="pressed" from="CurtainButton" to="." method="_on_test_button_pressed"]
+[connection signal="pressed" from="FadeButton" to="." method="_on_fade_button_pressed"]

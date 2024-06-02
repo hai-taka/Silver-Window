@@ -1,0 +1,532 @@
+{
+	"0": {
+		"25 line color": "ffffffff",
+		"25 text color": "ffffffff",
+		"auto_lines": true,
+		"auto_width": true,
+		"bg dict": {
+			"anim color": "000000ff",
+			"animation": 0,
+			"bott color": "bfbfbfff",
+			"bott offset": 91,
+			"line color 1": "000000ff",
+			"line color 2": "000000ff",
+			"line color 3": "000000ff",
+			"line color 4": "000000ff",
+			"path": "",
+			"ripple delay": 6,
+			"solid color": "000000ff",
+			"top color": "424242ff",
+			"top offset": 21,
+			"type": 1
+		},
+		"border color": "c0c0c0ff",
+		"border width": 2,
+		"box bg color": "000000ff",
+		"cursor color": "b1b1b1ff",
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"frame color": "ffffffe6",
+		"frame preset dict": {
+
+		},
+		"frame preset id": 1,
+		"frame width": 2,
+		"include size": false,
+		"lines": 1,
+		"loc bg color": "c0c0c0ff",
+		"loc text color": "000000ff",
+		"location dict": {
+			"chapter": "Chapter",
+			"loc 1": "Location",
+			"loc 2": "Location 2",
+			"loc 3": "",
+			"loc 4": "",
+			"show": false,
+			"type": 1
+		},
+		"margin dict": {
+			"bottom": 20,
+			"left": 20,
+			"pair lr": false,
+			"pair tb": false,
+			"right": 20,
+			"show": true,
+			"top": 100
+		},
+		"name": "",
+		"name color": "dbdbdbff",
+		"new": true,
+		"node name": "DialogueNode",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 778,
+		"pos y": 498,
+		"position offset dict": {
+			"@DialogueNode@1135": {
+				"x": -420,
+				"y": 280
+			},
+			"@DialogueNode@1369": {
+				"x": 400,
+				"y": 300
+			},
+			"@DialogueNode@1603": {
+				"x": 720,
+				"y": 1220
+			},
+			"@DialogueNode@1837": {
+				"x": 1160,
+				"y": 280
+			},
+			"@DialogueNode@2071": {
+				"x": 1880,
+				"y": 280
+			},
+			"@DialogueNode@2305": {
+				"x": 2580,
+				"y": 280
+			},
+			"@DialogueNode@2539": {
+				"x": 3260,
+				"y": 300
+			},
+			"@DialogueNode@2773": {
+				"x": 3920,
+				"y": 300
+			},
+			"@DialogueNode@3007": {
+				"x": 4620,
+				"y": 300
+			},
+			"@DialogueNode@3241": {
+				"x": 5280,
+				"y": 300
+			},
+			"@DialogueNode@3475": {
+				"x": 6020,
+				"y": 260
+			},
+			"@DialogueNode@3709": {
+				"x": 6760,
+				"y": 280
+			},
+			"@DialogueNode@3943": {
+				"x": 7460,
+				"y": 280
+			},
+			"@DialogueNode@901": {
+				"x": -1060,
+				"y": 260
+			},
+			"DialogueNode": {
+				"x": -1760,
+				"y": 260
+			},
+			"TransitionNode": {
+				"x": 8409.185546875,
+				"y": 596.10888671875
+			}
+		},
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Hello World!",
+		"text color": "b1b1b1ff",
+		"text preset dict": {
+			"preset 1": {
+				"id": 1,
+				"lines": 2,
+				"pos x": 200,
+				"pos y": 710,
+				"size x": 1145,
+				"size y": 154,
+				"text width": 1092
+			}
+		},
+		"text preset id": 2,
+		"text preset selected": 0,
+		"type": "text",
+		"width": 312,
+		"wipe color": "c9c9c9ff"
+	},
+	"1": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 2,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@901",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 440,
+		"pos y": 463,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "This is a demo of some of the features\nof the Silver Window editor.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 988
+	},
+	"10": {
+		"auto_width": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"name": "",
+		"new": false,
+		"node name": "@DialogueNode@3007",
+		"pics to move": [],
+		"speaker option": 0,
+		"start picture": false,
+		"text": "If \"Wipe\" is checked, the box will be\ncleared before displaying the new text.",
+		"type": "text",
+		"width": 1014,
+		"wipe": true
+	},
+	"11": {
+		"auto_width": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"name": "",
+		"new": false,
+		"node name": "@DialogueNode@3241",
+		"pics to move": [],
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Otherwise, text is added to the next\nline. The old box is resized\nautomatically.",
+		"type": "text",
+		"width": 936,
+		"wipe": false
+	},
+	"12": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": false,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 2,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@3475",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 200,
+		"pos y": 710,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "If you want to remember the position of a\ntextbox...",
+		"text preset selected": 1,
+		"type": "text",
+		"width": 1066
+	},
+	"13": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": false,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@3709",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 200,
+		"pos y": 710,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "You can save it as a preset.",
+		"text preset selected": 1,
+		"type": "text",
+		"width": 728
+	},
+	"14": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@3943",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 453,
+		"pos y": 498,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Next, we'll talk about paired images.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 962
+	},
+	"15": {
+		"node name": "TransitionNode",
+		"trans dict": {
+			"end card": false,
+			"fade duration": 3,
+			"line color": "c0c0c0ff",
+			"moon color": "c0c0c0ff",
+			"moon phrase": "",
+			"next script": "res://JSONs/demo/textbox_demo/demo-2.json",
+			"phrase color": "ffffffff",
+			"trans type": 1
+		},
+		"type": "transition"
+	},
+	"2": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@1135",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 336,
+		"pos y": 498,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Let's talk about Dialogue Nodes and textboxes.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1196
+	},
+	"3": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 4,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@1369",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 310,
+		"pos y": 394,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Dialogue Nodes are chained together to create a\ndialogue script. The script is advanced from one\nnode to the next when the player left-clicks or\npresses the spacebar.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1248
+	},
+	"4": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 2,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@1603",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 271,
+		"pos y": 463,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Each Dialogue Node has the option to create its own\ntextbox, or to reuse the previous node's.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1326
+	},
+	"5": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 3,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@1837",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 466,
+		"pos y": 429,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Textboxes adjust to the width of the\ntext they contain. Line breaks are \ndone manually.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 936
+	},
+	"6": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@2071",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 388,
+		"pos y": 130,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Textboxes can be centered on the x axis...",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1092
+	},
+	"7": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": false,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@2305",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 130,
+		"pos y": 498,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "The y axis...",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 338
+	},
+	"8": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@2539",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 830,
+		"pos y": 498,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Or both.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 208
+	},
+	"9": {
+		"auto_lines": false,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 5,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@2773",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 427,
+		"pos y": 360,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "If you want to reuse a box, you can\nuncheck \"New Box\" on the Dialogue Node.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1014
+	}
+}

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk87g3t05qokp"]
+
+[ext_resource type="Theme" uid="uid://1h40sciui403" path="res://themes/main_menu_theme.tres" id="1_537l2"]
+[ext_resource type="Script" path="res://rich_text_button.gd" id="1_fe4et"]
+
+[node name="RichTextButton" type="Button"]
+offset_right = 62.0
+offset_bottom = 48.0
+theme = ExtResource("1_537l2")
+text = "Text"
+script = ExtResource("1_fe4et")
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 0
+offset_right = 62.0
+offset_bottom = 48.0
+mouse_filter = 1
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="RichTextLabel" to="." method="_on_rich_text_label_mouse_entered"]

@@ -1,0 +1,270 @@
+[gd_scene load_steps=4 format=3 uid="uid://cokod26185f03"]
+
+[ext_resource type="Script" path="res://transition_node.gd" id="1_xefx8"]
+[ext_resource type="Resource" uid="uid://c232iqa8ihhii" path="res://resources/Data/curtain_presets.tres" id="2_1kj16"]
+[ext_resource type="StyleBox" uid="uid://1m7ivy7q5b63" path="res://themes/Styleboxes/Lines/visual_editor_h_sep.tres" id="3_t28k2"]
+
+[node name="TransitionNode" type="GraphNode" groups=["graph_nodes", "no_controls", "transition_nodes"]]
+custom_minimum_size = Vector2(500, 0)
+offset_right = 500.0
+offset_bottom = 222.0
+title = "Transition Node"
+show_close = true
+resizable = true
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(0.878431, 0.392157, 0.0862745, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_xefx8")
+curtain_presets = ExtResource("2_1kj16")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Next Script"
+
+[node name="ClearButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Clear"
+
+[node name="GoToButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Go to Script"
+
+[node name="Control" type="Control" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EndCardCheck" type="CheckButton" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "End Card"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="OpenButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Open"
+
+[node name="NewButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "New"
+
+[node name="PathLineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Script Path"
+editable = false
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = ExtResource("3_t28k2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Transition Type"
+
+[node name="TransType" type="OptionButton" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 3
+selected = 1
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "Curtain Wipe"
+popup/item_1/id = 1
+popup/item_2/text = "Fade"
+popup/item_2/id = 2
+
+[node name="FadeDurHBox" type="HBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/FadeDurHBox"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Fade Duration"
+
+[node name="FadeDurSpinBox" type="SpinBox" parent="VBoxContainer/FadeDurHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 10.0
+step = 0.1
+value = 2.0
+alignment = 3
+suffix = "sec"
+select_all_on_focus = true
+
+[node name="CurtainLineHBox" type="HBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/CurtainLineHBox"]
+layout_mode = 2
+text = "Curtain Line Color"
+
+[node name="CurtainLineColor" type="ColorPickerButton" parent="VBoxContainer/CurtainLineHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(0.752941, 0.752941, 0.752941, 1)
+edit_alpha = false
+
+[node name="Control" type="Control" parent="VBoxContainer/CurtainLineHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SavePreset" type="Button" parent="VBoxContainer/CurtainLineHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Save"
+
+[node name="RemovePreset" type="Button" parent="VBoxContainer/CurtainLineHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Remove"
+
+[node name="PresetOptionButton" type="OptionButton" parent="VBoxContainer/CurtainLineHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 1
+selected = 0
+popup/item_0/text = "None"
+popup/item_0/id = 0
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = ExtResource("3_t28k2")
+
+[node name="EndCardVBox" type="VBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MoonColorHBox" type="HBoxContainer" parent="VBoxContainer/EndCardVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/EndCardVBox/MoonColorHBox"]
+layout_mode = 2
+text = "Moon Modulate Color"
+
+[node name="MoonColorButton" type="ColorPickerButton" parent="VBoxContainer/EndCardVBox/MoonColorHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(0.752941, 0.752941, 0.752941, 1)
+edit_alpha = false
+
+[node name="MoonPhraseHBox" type="HBoxContainer" parent="VBoxContainer/EndCardVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/EndCardVBox/MoonPhraseHBox"]
+layout_mode = 2
+text = "Phrase"
+
+[node name="PhraseColorButton" type="ColorPickerButton" parent="VBoxContainer/EndCardVBox/MoonPhraseHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(1, 1, 1, 1)
+
+[node name="PhraseLineEdit" type="LineEdit" parent="VBoxContainer/EndCardVBox/MoonPhraseHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/caret_width = 3
+placeholder_text = "Chapter End Phrase"
+max_length = 30
+clear_button_enabled = true
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+size = Vector2i(700, 500)
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.json")
+
+[node name="PresetPopupPanel" type="PopupPanel" parent="."]
+size = Vector2i(130, 100)
+
+[node name="PresetLineEdit" type="LineEdit" parent="PresetPopupPanel"]
+unique_name_in_owner = true
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 126.766
+offset_bottom = 96.0
+placeholder_text = "Preset Name"
+expand_to_text_length = true
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+dialog_text = "Preset with that name already exists. Remove first or choose different name."
+
+[node name="NewScriptFileDialog" type="FileDialog" parent="."]
+title = "Save New Script"
+size = Vector2i(700, 500)
+filters = PackedStringArray("*.json")
+
+[node name="SaveFirstDialog" type="AcceptDialog" parent="."]
+dialog_text = "Save current file first!"
+
+[connection signal="close_request" from="." to="." method="_on_close_request"]
+[connection signal="position_offset_changed" from="." to="." method="_on_position_offset_changed"]
+[connection signal="resize_request" from="." to="." method="_on_resize_request"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer3/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer3/GoToButton" to="." method="_on_go_to_button_pressed"]
+[connection signal="toggled" from="VBoxContainer/VBoxContainer/HBoxContainer3/EndCardCheck" to="." method="_on_end_card_check_toggled"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/OpenButton" to="." method="_on_open_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/NewButton" to="." method="_on_new_button_pressed"]
+[connection signal="text_changed" from="VBoxContainer/VBoxContainer/HBoxContainer/PathLineEdit" to="." method="_on_path_line_edit_text_changed"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/TransType" to="." method="_on_trans_type_item_selected"]
+[connection signal="value_changed" from="VBoxContainer/FadeDurHBox/FadeDurSpinBox" to="." method="_on_fade_dur_spin_box_value_changed"]
+[connection signal="color_changed" from="VBoxContainer/CurtainLineHBox/CurtainLineColor" to="." method="_on_curtain_line_color_color_changed"]
+[connection signal="pressed" from="VBoxContainer/CurtainLineHBox/SavePreset" to="." method="_on_save_preset_pressed"]
+[connection signal="pressed" from="VBoxContainer/CurtainLineHBox/RemovePreset" to="." method="_on_remove_preset_pressed"]
+[connection signal="item_selected" from="VBoxContainer/CurtainLineHBox/PresetOptionButton" to="." method="_on_preset_option_button_item_selected"]
+[connection signal="color_changed" from="VBoxContainer/EndCardVBox/MoonColorHBox/MoonColorButton" to="." method="_on_moon_color_button_color_changed"]
+[connection signal="color_changed" from="VBoxContainer/EndCardVBox/MoonPhraseHBox/PhraseColorButton" to="." method="_on_phrase_color_button_color_changed"]
+[connection signal="text_changed" from="VBoxContainer/EndCardVBox/MoonPhraseHBox/PhraseLineEdit" to="." method="_on_phrase_line_edit_text_changed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="text_submitted" from="PresetPopupPanel/PresetLineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="file_selected" from="NewScriptFileDialog" to="." method="_on_new_script_file_dialog_file_selected"]

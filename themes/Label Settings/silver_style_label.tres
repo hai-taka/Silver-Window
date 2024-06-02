@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://uv8t8uspfxjh"]
+
+[ext_resource type="FontFile" uid="uid://ba4eryb25y6xk" path="res://fonts/Dynamic/Saira_Extra_Condensed/SairaExtraCondensed-Bold.ttf" id="1_dj7x3"]
+
+[resource]
+font = ExtResource("1_dj7x3")
+font_size = 32
+font_color = Color(0, 0, 0, 1)

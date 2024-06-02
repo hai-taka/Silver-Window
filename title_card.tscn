@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://kpkll1kgc26e"]
+
+[ext_resource type="LabelSettings" uid="uid://dtsp0cmfbt6cd" path="res://themes/Label Settings/title_card_label_settings.tres" id="1_tkkbi"]
+[ext_resource type="Script" path="res://title_card.gd" id="1_v8i1v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsug8"]
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 10
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdwug"]
+draw_center = false
+border_width_left = 10
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
+
+[node name="TitleCard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v8i1v")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="LeftPanelContainer" type="PanelContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nsug8")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/HBoxContainer/LeftPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="ChapterNumber" type="Label" parent="CenterContainer/HBoxContainer/LeftPanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "#1"
+label_settings = ExtResource("1_tkkbi")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="RightPanelContainer" type="PanelContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jdwug")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/HBoxContainer/RightPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ChapterName" type="Label" parent="CenterContainer/HBoxContainer/RightPanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "chapter"
+label_settings = ExtResource("1_tkkbi")
+horizontal_alignment = 1
+vertical_alignment = 2

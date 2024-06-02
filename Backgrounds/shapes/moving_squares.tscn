@@ -1,0 +1,174 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddhpu7axdtug"]
+
+[ext_resource type="Script" path="res://Backgrounds/shapes/moving_squares.gd" id="1_1d173"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k18af"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
+[node name="MovingSquares" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_1d173")
+metadata/_edit_lock_ = true
+
+[node name="Square1" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 205.0
+offset_right = 875.0
+offset_bottom = 455.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+metadata/_edit_lock_ = true
+
+[node name="Panel1" type="Panel" parent="Square1" groups=["panels"]]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k18af")
+metadata/_edit_lock_ = true
+
+[node name="Square2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 1045.0
+offset_top = 625.0
+offset_right = 1295.0
+offset_bottom = 875.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+metadata/_edit_lock_ = true
+
+[node name="Panel2" type="Panel" parent="Square2" groups=["panels"]]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k18af")
+metadata/_edit_lock_ = true
+
+[node name="Square3" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 625.0
+offset_right = 875.0
+offset_bottom = 875.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+metadata/_edit_lock_ = true
+
+[node name="Panel3" type="Panel" parent="Square3" groups=["panels"]]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k18af")
+metadata/_edit_lock_ = true
+
+[node name="Square4" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 1045.0
+offset_top = 205.0
+offset_right = 1295.0
+offset_bottom = 455.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+metadata/_edit_lock_ = true
+
+[node name="Panel4" type="Panel" parent="Square4" groups=["panels"]]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k18af")
+metadata/_edit_lock_ = true
+
+[node name="Square5" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 100.0
+offset_right = 590.0
+offset_bottom = 170.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_lock_ = true
+
+[node name="Panel5" type="Panel" parent="Square5" groups=["panels"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k18af")
+metadata/_edit_lock_ = true
+
+[node name="Square6" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 910.0
+offset_right = 590.0
+offset_bottom = 980.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_lock_ = true
+
+[node name="Panel6" type="Panel" parent="Square6" groups=["panels"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k18af")
+metadata/_edit_lock_ = true
+
+[node name="Square7" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 1330.0
+offset_top = 910.0
+offset_right = 1400.0
+offset_bottom = 980.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_lock_ = true
+
+[node name="Panel7" type="Panel" parent="Square7" groups=["panels"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k18af")
+metadata/_edit_lock_ = true
+
+[node name="Square8" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 1330.0
+offset_top = 100.0
+offset_right = 1400.0
+offset_bottom = 170.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_lock_ = true
+
+[node name="Panel8" type="Panel" parent="Square8" groups=["panels"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k18af")
+metadata/_edit_lock_ = true

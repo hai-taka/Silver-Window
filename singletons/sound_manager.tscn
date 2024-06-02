@@ -1,0 +1,124 @@
+[gd_scene load_steps=19 format=3 uid="uid://o02202ri32e"]
+
+[ext_resource type="Script" path="res://singletons/sound_manager.gd" id="1_6m8o0"]
+[ext_resource type="PackedScene" uid="uid://b18c478jdk8sa" path="res://sound_pool.tscn" id="2_bhpwd"]
+[ext_resource type="AudioStream" uid="uid://dl7iy48dvwsen" path="res://audio/sfx/typing/99693__fastson__brother_center-clip-1.mp3" id="3_ba3rb"]
+[ext_resource type="AudioStream" uid="uid://cvq883mvp2kaa" path="res://audio/sfx/typing/99693__fastson__brother_center-clip-2.mp3" id="4_g75f5"]
+[ext_resource type="AudioStream" uid="uid://j8ei5ypxwcac" path="res://audio/sfx/typing/96925__tomlija__electric-typewriter-clip-1.mp3" id="5_05m66"]
+[ext_resource type="AudioStream" uid="uid://dase1gj8wbqor" path="res://audio/sfx/typing/end_beep/232728__lezaarth__printer-ver2-clip-6.mp3" id="6_ykoa1"]
+[ext_resource type="AudioStream" uid="uid://brmn152jrmqtv" path="res://audio/music/Voice-v2.wav" id="7_bo1ou"]
+[ext_resource type="AudioStream" uid="uid://d2dehnm8qhbvh" path="res://audio/sfx/ui/ui_select.wav" id="8_bg7cp"]
+[ext_resource type="AudioStream" uid="uid://cgvxbyj8s7n43" path="res://audio/sfx/ui/ui_select-2.wav" id="9_w7564"]
+[ext_resource type="AudioStream" uid="uid://bo4j5a6j7nio" path="res://audio/sfx/ui/ui_confirm.wav" id="9_yau8l"]
+[ext_resource type="AudioStream" uid="uid://cx5uyrjbgisyf" path="res://audio/sfx/ui/ui_cancel.wav" id="10_xg4g3"]
+[ext_resource type="AudioStream" uid="uid://do4w4cpcgcvat" path="res://audio/sfx/other/picture_text/717337__briarsmc__warble376_01-clip01.wav" id="11_iayd1"]
+[ext_resource type="AudioStream" uid="uid://d2p3rye480tun" path="res://audio/sfx/other/picture_text/717337__briarsmc__warble376_01-clip02.wav" id="12_3f65q"]
+[ext_resource type="AudioStream" uid="uid://dq5xtu6k3esg4" path="res://audio/sfx/other/curtain_transition/curtain_sound_Gminor.wav" id="14_25rmm"]
+[ext_resource type="AudioStream" uid="uid://mkfq543vfuxb" path="res://audio/sfx/other/location_sound-3.wav" id="14_fagfy"]
+[ext_resource type="AudioStream" uid="uid://e36r00s8vuqe" path="res://audio/sfx/other/end_card_chapter_reveal/chapter_reveal.wav" id="15_y8lxu"]
+[ext_resource type="AudioStream" uid="uid://bkxillvv1kkf2" path="res://audio/music/end_card_track-fade.mp3" id="16_6ijuq"]
+[ext_resource type="AudioStream" uid="uid://7gu3c274phs6" path="res://audio/sfx/other/random (5).wav" id="18_lw765"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_6m8o0")
+
+[node name="TypingSoundPool" parent="." instance=ExtResource("2_bhpwd")]
+
+[node name="Typing1" type="AudioStreamPlayer" parent="TypingSoundPool"]
+stream = ExtResource("3_ba3rb")
+volume_db = 6.0
+bus = &"Typing"
+
+[node name="Typing2" type="AudioStreamPlayer" parent="TypingSoundPool"]
+stream = ExtResource("4_g75f5")
+volume_db = 6.0
+bus = &"Typing"
+
+[node name="Typing3" type="AudioStreamPlayer" parent="TypingSoundPool"]
+stream = ExtResource("5_05m66")
+volume_db = 6.0
+bus = &"Typing"
+
+[node name="EndBeepSoundPool" parent="." instance=ExtResource("2_bhpwd")]
+
+[node name="DialogueEndBeep" type="AudioStreamPlayer" parent="EndBeepSoundPool"]
+stream = ExtResource("6_ykoa1")
+volume_db = -6.0
+bus = &"Typing"
+
+[node name="DialogueEndBeep2" type="AudioStreamPlayer" parent="EndBeepSoundPool"]
+stream = ExtResource("6_ykoa1")
+volume_db = -6.0
+bus = &"Typing"
+
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_bo1ou")
+volume_db = -12.0
+bus = &"Music"
+
+[node name="PictureSound" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+bus = &"Music"
+
+[node name="BackgroundMusic2" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+bus = &"Music"
+
+[node name="UIFocusSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_bg7cp")
+bus = &"UI"
+
+[node name="UIConfirmSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_w7564")
+bus = &"UI"
+
+[node name="UISpecialConfirmSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_yau8l")
+bus = &"UI"
+
+[node name="UICancelSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_xg4g3")
+volume_db = -6.0
+bus = &"UI"
+
+[node name="FirstPicTextAppear" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_iayd1")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="FirstPicTextDisappear" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_3f65q")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="25LocationSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_fagfy")
+bus = &"SFX"
+
+[node name="CurtainSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_25rmm")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="EndCardChapterReveal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_y8lxu")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="EndCardMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_6ijuq")
+volume_db = -6.0
+bus = &"Music"
+
+[node name="NewChapterUnlock" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_lw765")
+bus = &"SFX"
+
+[node name="FinalEndCard" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_6ijuq")
+volume_db = -6.0
+bus = &"Music"

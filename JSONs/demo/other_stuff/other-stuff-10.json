@@ -1,0 +1,170 @@
+{
+	"0": {
+		"25 line color": "ffffffff",
+		"25 text color": "ffffffff",
+		"auto_lines": true,
+		"auto_width": true,
+		"bg dict": {
+			"anim color": "000000ff",
+			"animation": 0,
+			"bott color": "c76787ff",
+			"bott offset": 69,
+			"line color 1": "000000ff",
+			"line color 2": "000000ff",
+			"line color 3": "000000ff",
+			"line color 4": "000000ff",
+			"path": "",
+			"ripple delay": 6,
+			"solid color": "bfaf7cff",
+			"top color": "5b4a75ff",
+			"top offset": 21,
+			"type": 1
+		},
+		"border color": "90109eff",
+		"border width": 2,
+		"box bg color": "000000ff",
+		"cursor color": "b1b1b1ff",
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"frame color": "ffffffe6",
+		"frame preset dict": {
+
+		},
+		"frame preset id": 1,
+		"frame width": 2,
+		"include size": false,
+		"lines": 2,
+		"loc bg color": "85268aff",
+		"loc text color": "000000ff",
+		"location dict": {
+			"chapter": "Chapter",
+			"loc 1": "Location",
+			"loc 2": "",
+			"loc 3": "",
+			"loc 4": "",
+			"show": false,
+			"type": 0
+		},
+		"margin dict": {
+			"bottom": 20,
+			"left": 20,
+			"pair lr": false,
+			"pair tb": false,
+			"right": 20,
+			"show": true,
+			"top": 100
+		},
+		"name": "",
+		"name color": "dbdbdbff",
+		"new": true,
+		"node name": "@DialogueNode@5301",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 414,
+		"pos y": 463,
+		"position offset dict": {
+			"@DialogueNode@5301": {
+				"x": 495,
+				"y": 358.75
+			},
+			"@DialogueNode@5535": {
+				"x": 1280,
+				"y": 420
+			},
+			"@DialogueNode@5769": {
+				"x": 1980,
+				"y": 460
+			},
+			"@TransitionNode@5974": {
+				"x": 2700,
+				"y": 780
+			}
+		},
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "The final node type in the editor is the\nTransition Node.",
+		"text color": "b1b1b1ff",
+		"text preset dict": {
+
+		},
+		"text preset id": 1,
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1040,
+		"wipe color": "00d4caff"
+	},
+	"1": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 3,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@5535",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 362,
+		"pos y": 429,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Transition Nodes are used to mark the end of\na dialogue script. They also connect the\nscript to the next one in the chapter.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1144
+	},
+	"2": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@5769",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 427,
+		"pos y": 498,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "The transition can be a curtain wipe...",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1014
+	},
+	"3": {
+		"node name": "@TransitionNode@5974",
+		"trans dict": {
+			"end card": false,
+			"fade duration": 3,
+			"line color": "d61b24ff",
+			"moon color": "c0c0c0ff",
+			"moon phrase": "",
+			"next script": "res://JSONs/demo/other_stuff/other-stuff-11.json",
+			"phrase color": "ffffffff",
+			"trans type": 1
+		},
+		"type": "transition"
+	}
+}
