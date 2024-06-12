@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://file_menu.gd" id="3_8tuv6"]
 [ext_resource type="StyleBox" uid="uid://d1mx1udb5jm2d" path="res://themes/Styleboxes/window_panel_container.tres" id="3_78lco"]
 [ext_resource type="Script" path="res://editor.gd" id="3_j31ip"]
-[ext_resource type="Resource" uid="uid://bxmt53ajuqsq6" path="res://resources/Data/visual_editor_recent_files.tres" id="3_lvx1h"]
+[ext_resource type="Resource" uid="uid://brlqv52fqunwb" path="res://resources/Data/visual_editor_recent_files.tres" id="3_lvx1h"]
 [ext_resource type="Resource" uid="uid://b8pd513m6kkjk" path="res://resources/Data/visual_editor_theme.tres" id="4_pi40j"]
 [ext_resource type="LabelSettings" uid="uid://cikrp01tdn4pj" path="res://themes/Label Settings/name_label.tres" id="4_w4vwo"]
 [ext_resource type="StyleBox" uid="uid://b3ag6cmgnfpvq" path="res://themes/Styleboxes/speaker_frame.tres" id="5_3c4pl"]

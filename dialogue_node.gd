@@ -399,9 +399,11 @@ func _on_new_box_check_toggled(button_pressed):
 		PosY.editable = true
 		change_bgm.disabled = false
 		
-		if (next != null 
+		if (
+				next != null 
 				and not transition_connected 
-				and not next.NewBoxCheck.button_pressed):
+				and not next.NewBoxCheck.button_pressed
+		):
 			
 			next.NewBoxCheck.toggled.emit(next.NewBoxCheck.button_pressed)
 	
@@ -454,7 +456,7 @@ func _on_new_box_check_toggled(button_pressed):
 			and get_tree().get_nodes_in_group("dialogue_nodes").has(current_node) 
 			and not current_node.NewBoxCheck.button_pressed
 	):
-		
+		#print("available lines before: " + str(available_lines))
 		if current_node.TWSpinBox.value > old_box_node.TWSpinBox.value:
 			old_box_node.TWSpinBox.value = current_node.TWSpinBox.value
 			old_box_node.AutoWidth.button_pressed = false
@@ -468,6 +470,8 @@ func _on_new_box_check_toggled(button_pressed):
 				old_box_node.AutoLines.button_pressed = false
 				old_box_node.AutoLines.disabled = true
 				old_box_node.LinesBox.editable = false
+			else:
+				available_lines -= current_node.LinesBox.value
 		
 		else:
 			if current_node.LinesBox.value > old_box_node.LinesBox.value:
@@ -477,7 +481,7 @@ func _on_new_box_check_toggled(button_pressed):
 				old_box_node.LinesBox.editable = false
 			else:
 				available_lines = old_box_node.LinesBox.value - current_node.LinesBox.value
-		
+		#print("available lines after: " + str(available_lines))
 		current_node = current_node.next
 	
 	if old_box_node.PairedAuto.button_pressed and old_box_node.PairedPath.text != "":
@@ -798,6 +802,8 @@ func _on_text_presets_item_selected(index):
 			PosX.value = preset_pos_x
 			PosY.value = preset_pos_y
 		
+		CenterX.button_pressed = false
+		CenterY.button_pressed = false
 		CenterX.disabled = true
 		CenterY.disabled = true
 		ExampleWindow.draggable = false
@@ -846,7 +852,16 @@ func _on_text_preset_line_edit_text_submitted(new_text):
 		$"../DuplicatePresetWarning".popup_centered()
 		return
 	
-	$"..".text_preset_dict[new_text] = {"id": $"..".text_preset_id, "pos x": PosX.value, "pos y": PosY.value, "size x": BoxSizeX.value, "size y": BoxSizeY.value, "lines": LinesBox.value, "text width": TWSpinBox.value}
+	$"..".text_preset_dict[new_text] = {
+		"id": $"..".text_preset_id, 
+		"pos x": PosX.value, 
+		"pos y": PosY.value, 
+		"size x": BoxSizeX.value, 
+		"size y": BoxSizeY.value, 
+		"lines": LinesBox.value, 
+		"text width": TWSpinBox.value
+	}
+	
 	TextPresets.add_item(new_text, $"..".text_preset_id)
 	TextPresets.select(TextPresets.get_item_index($"..".text_preset_id))
 	TextPresets.item_selected.emit(TextPresets.get_selected())

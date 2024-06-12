@@ -64,6 +64,8 @@ func open_vertical(frames: int = 16) -> void:
 
 
 func close_horizontal(frames: int = 20) -> void:
+	right_curtain.position.x = 1920
+	left_curtain.position.x = -2020
 	right_curtain.show()
 	left_curtain.show()
 	right_static_lines.show()

@@ -1239,7 +1239,7 @@ func _on_load_file_dialog_file_selected(path):
 				var lines = script[str(i)]["lines"]
 				var auto_lines = script[str(i)]["auto_lines"]
 				var text_preset_selected = script[str(i)]["text preset selected"]
-				var include_size = script[str(i)]["include size"]
+				#var include_size = script[str(i)]["include size"]
 				
 				dialogue_node_instance.get_node("VBoxContainer/HBoxContainer6/CenterX").button_pressed = dialogue_center_x
 				dialogue_node_instance.get_node("VBoxContainer/HBoxContainer6/CenterX").toggled.emit(dialogue_center_x)
@@ -1252,7 +1252,7 @@ func _on_load_file_dialog_file_selected(path):
 				dialogue_node_instance.get_node("VBoxContainer/MarginContainer3/HBoxContainer/AutoLines").toggled.emit(auto_lines)
 				dialogue_node_instance.get_node("VBoxContainer/HBoxContainer8/TextPresets").selected = text_preset_selected
 				dialogue_node_instance.get_node("VBoxContainer/HBoxContainer8/TextPresets").item_selected.emit(text_preset_selected)
-				dialogue_node_instance.get_node("VBoxContainer/HBoxContainer8/IncludeSize").button_pressed = include_size
+				#dialogue_node_instance.get_node("VBoxContainer/HBoxContainer8/IncludeSize").button_pressed = include_size
 				
 				if paired:
 					if !dict.has_all(["path", "paired_auto", "paired auto option", "paired pos x", "paired pos y", "frame preset"]):

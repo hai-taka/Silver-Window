@@ -33,6 +33,8 @@ var start = 0
 var blank = false
 var allow_input = true
 
+var end_beep_played: bool = false
+
 @onready var ExpandShrinkContainer = $"../../.."
 @onready var DialogueContainer = $"../.."
 @onready var DialoguePadding = $".."
@@ -151,17 +153,23 @@ func _process(_delta):
 					$Underline.position.y = $TextCursor.position.y + $TextCursor.size.y + UNDERLINE_OFFSET
 				
 				# Stop typing sound early to account for latency
-				if visible_characters == no_tags_text.length() - 1:
+				#if visible_characters == no_tags_text.length() - 1:
 					#text_done = true
-					SoundManager.stop_typing_sound()
-					SoundManager.play_end_beep()
+				#	SoundManager.stop_typing_sound()
+				#	
+				#	if not end_beep_played:
+				#		SoundManager.play_end_beep()
+				#		end_beep_played = true
 				
 				# If boxes are turned off, everything is done now.
 				# Flash cursor when all characters are visible.
 				if visible_characters == no_tags_text.length():
 					#text_done = true
-					#SoundManager.stop_typing_sound()
-					#SoundManager.play_end_beep()
+					SoundManager.stop_typing_sound()
+					
+					if not end_beep_played:
+						SoundManager.play_end_beep()
+						end_beep_played = true
 					
 					if !$HollowBoxControl.show_boxes:
 						all_chars_displayed = true
@@ -185,7 +193,11 @@ func _unhandled_input(event):
 			if !all_chars_displayed:
 				#text_done = true
 				SoundManager.stop_typing_sound()
-				SoundManager.play_end_beep()
+				
+				if not end_beep_played:
+					SoundManager.play_end_beep()
+					end_beep_played = true
+				
 				visible_characters = no_tags_text.length()
 				$TextCursor.position = cursor_positions.back()
 
@@ -209,6 +221,7 @@ func _unhandled_input(event):
 				allow_input = false
 			#	print("input")
 				emit_signal("dialogue_finished")
+				end_beep_played = false
 		
 		elif event.is_action_pressed("advance_text") and window_expanded and !ExpandShrinkContainer.shrinking and blank:
 			allow_input = false
