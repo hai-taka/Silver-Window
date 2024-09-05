@@ -8,6 +8,15 @@ A visual editor within Godot 4.0.4 for displaying text and images in the style o
 
 ![hello-world gif](screenshots/hello-world.gif)
 
+## Demo Game
+
+A demo game made using the editor is available here:
+https://hai-taka.itch.io/silver-window-editor-demo
+
+The demo shows off the various features of the editor and doubles as a tutorial. It is recommended to go through it before using the editor.
+
+The JSON scripts from the demo are included in the project files.
+
 ## Installation
 
 This project was made with Godot 4.0.4. It has not been tested on newer versions of Godot.
