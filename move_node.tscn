@@ -1,0 +1,282 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkb08gyai70tg"]
+
+[ext_resource type="Script" path="res://move_node.gd" id="1_6xexm"]
+[ext_resource type="StyleBox" uid="uid://1m7ivy7q5b63" path="res://themes/Styleboxes/Lines/visual_editor_h_sep.tres" id="2_ovdo2"]
+[ext_resource type="Texture2D" uid="uid://lxbwindh154" path="res://Icons/Boxicons/PNGs/play-regular-24.png" id="3_3eeaa"]
+[ext_resource type="Texture2D" uid="uid://c7sqds4307eu5" path="res://Icons/Boxicons/PNGs/stop-regular-24.png" id="4_y158p"]
+
+[node name="MoveNode" type="GraphNode" groups=["graph_nodes", "move_nodes", "no_controls"]]
+custom_minimum_size = Vector2(500, 0)
+offset_right = 500.0
+offset_bottom = 304.0
+title = "Update Picture Node"
+show_close = true
+resizable = true
+slot/0/left_enabled = true
+slot/0/left_type = 2
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 3
+slot/0/right_color = Color(0.243137, 0.329412, 0.901961, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_6xexm")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "New Image"
+vertical_alignment = 1
+
+[node name="PreviewCheck" type="CheckButton" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = "Preview"
+
+[node name="ClearButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Clear"
+
+[node name="PreviewRect" type="TextureRect" parent="VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="OpenButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Open"
+
+[node name="PathLineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "New Image Path"
+editable = false
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Delay Before"
+vertical_alignment = 1
+
+[node name="DelayBefore" type="SpinBox" parent="VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 10.0
+step = 0.05
+alignment = 3
+suffix = "sec"
+select_all_on_focus = true
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Delay After"
+vertical_alignment = 1
+
+[node name="DelayAfter" type="SpinBox" parent="VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 10.0
+step = 0.05
+alignment = 3
+suffix = "sec"
+select_all_on_focus = true
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = ExtResource("2_ovdo2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "New Position"
+vertical_alignment = 1
+
+[node name="NewPosX" type="SpinBox" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+rounded = true
+allow_greater = true
+alignment = 3
+editable = false
+prefix = "x:"
+select_all_on_focus = true
+
+[node name="NewPosY" type="SpinBox" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+rounded = true
+allow_greater = true
+alignment = 3
+editable = false
+prefix = "y:"
+select_all_on_focus = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Movement Type"
+vertical_alignment = 1
+
+[node name="MoveTypeOptions" type="OptionButton" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+item_count = 4
+selected = 3
+popup/item_0/text = "Direct"
+popup/item_0/id = 0
+popup/item_1/text = "X --> Y"
+popup/item_1/id = 1
+popup/item_2/text = "Y --> X"
+popup/item_2/id = 2
+popup/item_3/text = "None"
+popup/item_3/id = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControlPicture" type="CheckButton" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+disabled = true
+text = "Control Picture"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = ExtResource("2_ovdo2")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PlaySound" type="CheckButton" parent="VBoxContainer/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play Sound"
+
+[node name="ClearSound" type="Button" parent="VBoxContainer/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Clear"
+
+[node name="NewTrack" type="CheckButton" parent="VBoxContainer/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "BG Music"
+
+[node name="SFXButton" type="CheckButton" parent="VBoxContainer/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+button_pressed = true
+text = "SFX"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/VBoxContainer2/HBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+icon = ExtResource("3_3eeaa")
+icon_alignment = 1
+
+[node name="StopButton" type="Button" parent="VBoxContainer/VBoxContainer2/HBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+icon = ExtResource("4_y158p")
+icon_alignment = 1
+
+[node name="OpenSound" type="Button" parent="VBoxContainer/VBoxContainer2/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Open"
+
+[node name="SoundPath" type="LineEdit" parent="VBoxContainer/VBoxContainer2/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Sound Path"
+editable = false
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+size = Vector2i(700, 500)
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.jpg, *.jpeg, *.png")
+
+[node name="SoundFileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+size = Vector2i(700, 500)
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.mp3, *.wav")
+
+[connection signal="close_request" from="." to="." method="_on_close_request"]
+[connection signal="position_offset_changed" from="." to="." method="_on_position_offset_changed"]
+[connection signal="resize_request" from="." to="." method="_on_resize_request"]
+[connection signal="toggled" from="VBoxContainer/VBoxContainer/HBoxContainer/PreviewCheck" to="." method="_on_preview_check_toggled"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/OpenButton" to="." method="_on_open_button_pressed"]
+[connection signal="text_changed" from="VBoxContainer/VBoxContainer/HBoxContainer2/PathLineEdit" to="." method="_on_path_line_edit_text_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer3/DelayBefore" to="." method="_on_delay_before_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer3/DelayAfter" to="." method="_on_delay_after_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/NewPosX" to="." method="_on_new_pos_x_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/NewPosY" to="." method="_on_new_pos_y_value_changed"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer2/MoveTypeOptions" to="." method="_on_move_type_options_item_selected"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer2/ControlPicture" to="." method="_on_control_picture_toggled"]
+[connection signal="toggled" from="VBoxContainer/VBoxContainer2/HBoxContainer/PlaySound" to="." method="_on_play_sound_toggled"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/HBoxContainer/ClearSound" to="." method="_on_clear_sound_pressed"]
+[connection signal="toggled" from="VBoxContainer/VBoxContainer2/HBoxContainer/NewTrack" to="." method="_on_new_track_toggled"]
+[connection signal="toggled" from="VBoxContainer/VBoxContainer2/HBoxContainer/SFXButton" to="." method="_on_sfx_button_toggled"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/HBoxContainer2/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/HBoxContainer2/HBoxContainer/StopButton" to="." method="_on_stop_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/HBoxContainer2/OpenSound" to="." method="_on_open_sound_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="file_selected" from="SoundFileDialog" to="." method="_on_sound_file_dialog_file_selected"]

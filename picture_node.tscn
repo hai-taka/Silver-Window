@@ -1,0 +1,546 @@
+[gd_scene load_steps=8 format=3 uid="uid://b88pn40s68r1o"]
+
+[ext_resource type="Script" path="res://picture_node.gd" id="1_uhp4a"]
+[ext_resource type="PackedScene" uid="uid://bv0cspqo5kmjf" path="res://example_picture_window.tscn" id="2_6ex7v"]
+[ext_resource type="Resource" uid="uid://8dnoec37gj53" path="res://resources/Data/first_pic_label_presets.tres" id="2_dw577"]
+[ext_resource type="StyleBox" uid="uid://1m7ivy7q5b63" path="res://themes/Styleboxes/Lines/visual_editor_h_sep.tres" id="3_4su4p"]
+[ext_resource type="Texture2D" uid="uid://lxbwindh154" path="res://Icons/Boxicons/PNGs/play-regular-24.png" id="4_n0quh"]
+[ext_resource type="Texture2D" uid="uid://c7sqds4307eu5" path="res://Icons/Boxicons/PNGs/stop-regular-24.png" id="5_1tu20"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2huh"]
+resource_local_to_scene = true
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.521569, 0, 0.00784314, 1)
+shadow_color = Color(0, 0, 0, 0.188235)
+shadow_size = 2
+shadow_offset = Vector2(5, 5)
+anti_aliasing = false
+
+[node name="PictureNode" type="GraphNode" groups=["dialogues_and_pics", "graph_nodes", "no_controls", "picture_nodes"]]
+offset_right = 347.0
+offset_bottom = 249.0
+title = "Picture Node"
+show_close = true
+resizable = true
+slot/0/left_enabled = true
+slot/0/left_type = 1
+slot/0/left_color = Color(0.211765, 0.960784, 0.211765, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 1
+slot/0/right_color = Color(1, 0, 0.968627, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = true
+slot/1/right_type = 2
+slot/1/right_color = Color(0.243137, 0.329412, 0.901961, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = false
+slot/2/right_type = 4
+slot/2/right_color = Color(0.819608, 0.764706, 0.956863, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color(1, 1, 1, 1)
+slot/3/left_icon = null
+slot/3/right_enabled = false
+slot/3/right_type = 0
+slot/3/right_color = Color(1, 1, 1, 1)
+slot/3/right_icon = null
+slot/3/draw_stylebox = true
+script = ExtResource("1_uhp4a")
+first_pic_presets = ExtResource("2_dw577")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CenterContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PreviewButton" type="CheckButton" parent="VBoxContainer/CenterContainer2/HBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Preview"
+
+[node name="ClearButton" type="Button" parent="VBoxContainer/CenterContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Clear"
+
+[node name="PreviewRect" type="TextureRect" parent="VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="OpenButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Open"
+
+[node name="PicturePath" type="LineEdit" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Image Path"
+editable = false
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = ExtResource("3_4su4p")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SizeLabel" type="Label" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+text = "Box Size"
+vertical_alignment = 1
+
+[node name="SizeXSpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+allow_greater = true
+alignment = 3
+editable = false
+prefix = "x:"
+select_all_on_focus = true
+
+[node name="SizeYSpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+allow_greater = true
+alignment = 3
+editable = false
+prefix = "y:"
+select_all_on_focus = true
+
+[node name="MarginCheck" type="CheckBox" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Align Margins"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PositionLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+text = "Position"
+vertical_alignment = 1
+
+[node name="PosXSpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+allow_greater = true
+alignment = 3
+prefix = "x:"
+select_all_on_focus = true
+
+[node name="PosYSpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+allow_greater = true
+alignment = 3
+prefix = "y:"
+select_all_on_focus = true
+
+[node name="CenterXCheck" type="CheckBox" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Center X"
+
+[node name="CenterYCheck" type="CheckBox" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Center Y"
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = ExtResource("3_4su4p")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Fade"
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer4/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="FadeInCheck" type="CheckBox" parent="VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(99, 0)
+layout_mode = 2
+text = "Fade In"
+
+[node name="FadeInDuration" type="SpinBox" parent="VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+max_value = 10.0
+step = 0.1
+value = 3.0
+alignment = 3
+editable = false
+suffix = "sec"
+select_all_on_focus = true
+
+[node name="FadeInColor" type="ColorPickerButton" parent="VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+disabled = true
+edit_alpha = false
+
+[node name="FadeInSolid" type="CheckBox" parent="VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+disabled = true
+button_pressed = true
+text = "Solid"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer4/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="FadeOutCheck" type="CheckBox" parent="VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Fade Out"
+
+[node name="FadeOutDuration" type="SpinBox" parent="VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+max_value = 10.0
+step = 0.1
+value = 1.0
+alignment = 3
+editable = false
+suffix = "sec"
+select_all_on_focus = true
+
+[node name="FadeOutColor" type="ColorPickerButton" parent="VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+disabled = true
+edit_alpha = false
+
+[node name="FadeOutSolid" type="CheckBox" parent="VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+disabled = true
+button_pressed = true
+text = "Solid"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = ExtResource("3_4su4p")
+
+[node name="FirstPicVBox" type="VBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TopLineHBox" type="HBoxContainer" parent="VBoxContainer/FirstPicVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/FirstPicVBox/TopLineHBox"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "Top Text"
+vertical_alignment = 1
+
+[node name="TopLine" type="LineEdit" parent="VBoxContainer/FirstPicVBox/TopLineHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Optional Text 1"
+clear_button_enabled = true
+
+[node name="TopLine2" type="LineEdit" parent="VBoxContainer/FirstPicVBox/TopLineHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Optional Text 2"
+editable = false
+clear_button_enabled = true
+
+[node name="BottLineHBox" type="HBoxContainer" parent="VBoxContainer/FirstPicVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/FirstPicVBox/BottLineHBox"]
+layout_mode = 2
+text = "Bottom Text"
+vertical_alignment = 1
+
+[node name="BottLine" type="LineEdit" parent="VBoxContainer/FirstPicVBox/BottLineHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Optional Text 1"
+clear_button_enabled = true
+
+[node name="BottLine2" type="LineEdit" parent="VBoxContainer/FirstPicVBox/BottLineHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Optional Text 2"
+editable = false
+clear_button_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/FirstPicVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/FirstPicVBox/HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "Text Color"
+vertical_alignment = 1
+
+[node name="ColorButton" type="ColorPickerButton" parent="VBoxContainer/FirstPicVBox/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(1, 1, 1, 1)
+
+[node name="Control" type="Control" parent="VBoxContainer/FirstPicVBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SaveButton" type="Button" parent="VBoxContainer/FirstPicVBox/HBoxContainer"]
+layout_mode = 2
+text = "Save"
+
+[node name="RemoveButton" type="Button" parent="VBoxContainer/FirstPicVBox/HBoxContainer"]
+layout_mode = 2
+text = "Remove"
+
+[node name="ColorPresets" type="OptionButton" parent="VBoxContainer/FirstPicVBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 1
+selected = 0
+popup/item_0/text = "None"
+popup/item_0/id = 0
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = ExtResource("3_4su4p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PlaySound" type="CheckButton" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play Sound"
+
+[node name="ClearSound" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Clear"
+
+[node name="AwaitSound" type="CheckBox" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+disabled = true
+button_pressed = true
+text = "Await sound completion"
+
+[node name="NewTrack" type="CheckButton" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "BG Music"
+
+[node name="SFXButton" type="CheckButton" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+button_pressed = true
+text = "SFX"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+icon = ExtResource("4_n0quh")
+icon_alignment = 1
+
+[node name="StopButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+icon = ExtResource("5_1tu20")
+icon_alignment = 1
+
+[node name="OpenSound" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Open"
+
+[node name="SoundPath" type="LineEdit" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Sound Path"
+editable = false
+
+[node name="HSeparator5" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = ExtResource("3_4su4p")
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ShowExampleBox" type="CheckButton" parent="VBoxContainer/CenterContainer"]
+layout_mode = 2
+text = "Show Example Box"
+
+[node name="ExamplePictureWindow" parent="." groups=["example_controls"] instance=ExtResource("2_6ex7v")]
+visible = false
+layout_mode = 2
+
+[node name="PictureContainer" parent="ExamplePictureWindow" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_b2huh")
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+size = Vector2i(700, 500)
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.png, *.jpg, *.jpeg, *.svg, *.webp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.243137, 0.329412, 0.901961, 1)
+text = "Update"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.819608, 0.764706, 0.956863, 1)
+text = "Change"
+
+[node name="PresetPopupPanel" type="PopupPanel" parent="."]
+size = Vector2i(130, 100)
+
+[node name="PresetLineEdit" type="LineEdit" parent="PresetPopupPanel"]
+unique_name_in_owner = true
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 126.766
+offset_bottom = 96.0
+placeholder_text = "Preset Name"
+expand_to_text_length = true
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+dialog_text = "Preset with that name already exists. Remove first or choose different name."
+
+[node name="SoundFileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+size = Vector2i(700, 500)
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.mp3, *.wav")
+
+[connection signal="close_request" from="." to="." method="_on_close_request"]
+[connection signal="node_selected" from="." to="." method="_on_node_selected"]
+[connection signal="position_changed" from="." to="." method="_on_position_changed"]
+[connection signal="position_offset_changed" from="." to="." method="_on_position_offset_changed"]
+[connection signal="resize_request" from="." to="." method="_on_resize_request"]
+[connection signal="toggled" from="VBoxContainer/CenterContainer2/HBoxContainer/PreviewButton" to="." method="_on_preview_button_toggled"]
+[connection signal="pressed" from="VBoxContainer/CenterContainer2/HBoxContainer/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/OpenButton" to="." method="_on_open_button_pressed"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer3/MarginCheck" to="." method="_on_margin_check_toggled"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/PosXSpinBox" to="." method="_on_pos_x_spin_box_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/PosYSpinBox" to="." method="_on_pos_y_spin_box_value_changed"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/CenterXCheck" to="." method="_on_center_x_check_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/CenterYCheck" to="." method="_on_center_y_check_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer/FadeInCheck" to="." method="_on_fade_in_check_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2/FadeOutCheck" to="." method="_on_fade_out_check_toggled"]
+[connection signal="text_changed" from="VBoxContainer/FirstPicVBox/TopLineHBox/TopLine" to="." method="_on_top_line_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/FirstPicVBox/TopLineHBox/TopLine2" to="." method="_on_top_line_2_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/FirstPicVBox/BottLineHBox/BottLine" to="." method="_on_bott_line_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/FirstPicVBox/BottLineHBox/BottLine2" to="." method="_on_bott_line_2_text_changed"]
+[connection signal="color_changed" from="VBoxContainer/FirstPicVBox/HBoxContainer/ColorButton" to="." method="_on_color_button_color_changed"]
+[connection signal="pressed" from="VBoxContainer/FirstPicVBox/HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/FirstPicVBox/HBoxContainer/RemoveButton" to="." method="_on_remove_button_pressed"]
+[connection signal="item_selected" from="VBoxContainer/FirstPicVBox/HBoxContainer/ColorPresets" to="." method="_on_color_presets_item_selected"]
+[connection signal="toggled" from="VBoxContainer/VBoxContainer/HBoxContainer2/PlaySound" to="." method="_on_play_sound_toggled"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/ClearSound" to="." method="_on_clear_sound_pressed"]
+[connection signal="toggled" from="VBoxContainer/VBoxContainer/HBoxContainer2/AwaitSound" to="." method="_on_await_sound_toggled"]
+[connection signal="toggled" from="VBoxContainer/VBoxContainer/HBoxContainer2/NewTrack" to="." method="_on_new_track_toggled"]
+[connection signal="toggled" from="VBoxContainer/VBoxContainer/HBoxContainer2/SFXButton" to="." method="_on_sfx_button_toggled"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer/StopButton" to="." method="_on_stop_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/OpenSound" to="." method="_on_open_sound_pressed"]
+[connection signal="toggled" from="VBoxContainer/CenterContainer/ShowExampleBox" to="." method="_on_show_example_box_toggled"]
+[connection signal="dragged" from="ExamplePictureWindow/PictureContainer" to="." method="_on_picture_container_dragged"]
+[connection signal="resized" from="ExamplePictureWindow/PictureContainer" to="." method="_on_picture_container_resized"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="text_submitted" from="PresetPopupPanel/PresetLineEdit" to="." method="_on_preset_line_edit_text_submitted"]
+[connection signal="file_selected" from="SoundFileDialog" to="." method="_on_sound_file_dialog_file_selected"]
+
+[editable path="ExamplePictureWindow"]

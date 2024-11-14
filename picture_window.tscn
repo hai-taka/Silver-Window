@@ -1,0 +1,118 @@
+[gd_scene load_steps=10 format=3 uid="uid://mc36xkxw8pom"]
+
+[ext_resource type="Script" path="res://expand_shrink_picture.gd" id="1_hci2j"]
+[ext_resource type="StyleBox" uid="uid://d1mx1udb5jm2d" path="res://themes/Styleboxes/window_panel_container.tres" id="2_le1ui"]
+[ext_resource type="Texture2D" uid="uid://cwa450g4v34vx" path="res://assets/godot_icon_500_blue.jpg" id="3_e5luo"]
+[ext_resource type="Script" path="res://picture_rect.gd" id="4_jcl4h"]
+[ext_resource type="FontFile" uid="uid://gmw1n4775pkr" path="res://fonts/Dynamic/Saira_Extra_Condensed/SairaExtraCondensed-Regular.ttf" id="5_lrre8"]
+[ext_resource type="Script" path="res://resources/RichTextEffects/rich_text_fall.gd" id="6_x8bis"]
+[ext_resource type="Script" path="res://resources/RichTextEffects/rich_text_sink.gd" id="7_cyrtp"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_lfaw8"]
+script = ExtResource("6_x8bis")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_2alfi"]
+script = ExtResource("7_cyrtp")
+
+[node name="PictureWindow" type="Control" groups=["windows"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="ExpandShrinkContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 504.0
+offset_bottom = 504.0
+mouse_filter = 2
+script = ExtResource("1_hci2j")
+
+[node name="PictureContainer" type="PanelContainer" parent="ExpandShrinkContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_le1ui")
+
+[node name="Control" type="Control" parent="ExpandShrinkContainer/PictureContainer"]
+clip_contents = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PictureRect" type="TextureRect" parent="ExpandShrinkContainer/PictureContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_e5luo")
+stretch_mode = 3
+script = ExtResource("4_jcl4h")
+
+[node name="ColorRect" type="ColorRect" parent="ExpandShrinkContainer/PictureContainer/Control/PictureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control2" type="Control" parent="ExpandShrinkContainer/PictureContainer"]
+clip_contents = true
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="FirstPicTopLabel" type="RichTextLabel" parent="ExpandShrinkContainer/PictureContainer/Control2"]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(1, 1, 1, 0.8)
+clip_contents = false
+layout_mode = 1
+offset_left = 10.0
+offset_top = -10.0
+offset_right = 158.0
+offset_bottom = 67.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.917647, 0.917647, 0.917647, 1)
+theme_override_fonts/normal_font = ExtResource("5_lrre8")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+custom_effects = [SubResource("RichTextEffect_lfaw8"), SubResource("RichTextEffect_2alfi")]
+metadata/_edit_lock_ = true
+
+[node name="FirstPicBottLabel" type="RichTextLabel" parent="ExpandShrinkContainer/PictureContainer/Control2"]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(1, 1, 1, 0.8)
+clip_contents = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -72.0
+offset_right = 204.0
+offset_bottom = 5.0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.917647, 0.917647, 0.917647, 1)
+theme_override_fonts/normal_font = ExtResource("5_lrre8")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+custom_effects = [SubResource("RichTextEffect_lfaw8"), SubResource("RichTextEffect_2alfi")]
+metadata/_edit_lock_ = true

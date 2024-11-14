@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c232iqa8ihhii"]
+
+[ext_resource type="Script" path="res://resources/Data/curtain_presets.gd" id="1_xoqd8"]
+
+[resource]
+script = ExtResource("1_xoqd8")
+line_colors = {
+"other-stuff": Color(0.839216, 0.105882, 0.141176, 1),
+"picture-demo": Color(0.0666667, 0, 0.839216, 1)
+}

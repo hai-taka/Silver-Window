@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://brlqv52fqunwb"]
+
+[ext_resource type="Script" path="res://resources/Data/visual_editor_recent_files.gd" id="1_w6lw8"]
+
+[resource]
+script = ExtResource("1_w6lw8")
+recent_files = Array[String]([])

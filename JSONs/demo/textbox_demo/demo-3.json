@@ -1,0 +1,521 @@
+{
+	"0": {
+		"25 line color": "ffffffff",
+		"25 text color": "ffffffff",
+		"auto_lines": true,
+		"auto_width": true,
+		"bg dict": {
+			"anim color": "000000ff",
+			"animation": 0,
+			"bott color": "bfbfbfff",
+			"bott offset": 91,
+			"line color 1": "000000ff",
+			"line color 2": "000000ff",
+			"line color 3": "000000ff",
+			"line color 4": "000000ff",
+			"path": "",
+			"ripple delay": 6,
+			"solid color": "000000ff",
+			"top color": "424242ff",
+			"top offset": 21,
+			"type": 1
+		},
+		"border color": "c0c0c0ff",
+		"border width": 2,
+		"box bg color": "000000ff",
+		"cursor color": "b1b1b1ff",
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"frame color": "ffffffe6",
+		"frame preset dict": {
+			"blue frame": {
+				"id": 1,
+				"name": "Blue",
+				"pos x": 813,
+				"pos y": 321,
+				"size x": 300,
+				"size y": 300,
+				"speaker option": 0
+			}
+		},
+		"frame preset id": 2,
+		"frame width": 2,
+		"include size": false,
+		"lines": 2,
+		"loc bg color": "c0c0c0ff",
+		"loc text color": "000000ff",
+		"location dict": {
+			"chapter": "Chapter",
+			"loc 1": "Location",
+			"loc 2": "",
+			"loc 3": "",
+			"loc 4": "",
+			"show": false,
+			"type": 0
+		},
+		"margin dict": {
+			"bottom": 20,
+			"left": 20,
+			"pair lr": false,
+			"pair tb": false,
+			"right": 20,
+			"show": true,
+			"top": 100
+		},
+		"name": "",
+		"name color": "dbdbdbff",
+		"new": true,
+		"node name": "@DialogueNode@9387",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 375,
+		"pos y": 463,
+		"position offset dict": {
+			"@DialogueNode@10493": {
+				"x": 980,
+				"y": 360
+			},
+			"@DialogueNode@10727": {
+				"x": 1640,
+				"y": 420
+			},
+			"@DialogueNode@10961": {
+				"x": 2280,
+				"y": 460
+			},
+			"@DialogueNode@11195": {
+				"x": 2900,
+				"y": 480
+			},
+			"@DialogueNode@11429": {
+				"x": 3680,
+				"y": 500
+			},
+			"@DialogueNode@11663": {
+				"x": 4400,
+				"y": 500
+			},
+			"@DialogueNode@11897": {
+				"x": 4660,
+				"y": 1440
+			},
+			"@DialogueNode@12131": {
+				"x": 5220,
+				"y": 500
+			},
+			"@DialogueNode@9387": {
+				"x": -980,
+				"y": 300
+			},
+			"@DialogueNode@9621": {
+				"x": -360,
+				"y": 300
+			},
+			"@DialogueNode@9855": {
+				"x": 300,
+				"y": 300
+			},
+			"@PictureNode@10259": {
+				"x": 140,
+				"y": 2200
+			},
+			"@TransitionNode@12336": {
+				"x": 6020,
+				"y": 740
+			},
+			"PictureNode": {
+				"x": 140,
+				"y": 1420
+			}
+		},
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Instead of pairing a textbox with an image,\nyou can choose to pair it with a frame.",
+		"text color": "b1b1b1ff",
+		"text preset dict": {
+
+		},
+		"text preset id": 1,
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1118,
+		"wipe color": "c9c9c9ff"
+	},
+	"1": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 2,
+		"name": "Blue",
+		"new": true,
+		"node name": "@DialogueNode@9621",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 258,
+		"pos y": 463,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "A frame shows who is speaking within a larger image,\nor within an image containing multiple people.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1352
+	},
+	"10": {
+		"auto_width": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"name": "",
+		"new": false,
+		"node name": "@DialogueNode@12131",
+		"pics to move": [],
+		"speaker option": 0,
+		"start picture": false,
+		"text": "In the next chapter, we'll discuss Picture Nodes.",
+		"type": "text",
+		"width": 1274,
+		"wipe": true
+	},
+	"11": {
+		"node name": "@TransitionNode@12336",
+		"trans dict": {
+			"end card": true,
+			"fade duration": 3,
+			"line color": "c0c0c0ff",
+			"moon color": "c0c0c0ff",
+			"moon phrase": "Hello World",
+			"next script": "",
+			"phrase color": "ffffffff",
+			"trans type": 2
+		},
+		"type": "transition"
+	},
+	"2": {
+		"auto_lines": true,
+		"auto_width": true,
+		"center x": [
+			false,
+			false
+		],
+		"center y": [
+			false,
+			false
+		],
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"fade in": [
+			false,
+			false
+		],
+		"fade in color": [
+			"000000ff",
+			"000000ff"
+		],
+		"fade in duration": [
+			3,
+			3
+		],
+		"fade in solid": [
+			true,
+			true
+		],
+		"fade out": [
+			false,
+			false
+		],
+		"fade out color": [
+			"000000ff",
+			"000000ff"
+		],
+		"fade out duration": [
+			1,
+			1
+		],
+		"fade out solid": [
+			true,
+			true
+		],
+		"frame pos x": 453,
+		"frame pos y": 310,
+		"frame preset": 0,
+		"frame size x": 300,
+		"frame size y": 300,
+		"include size": false,
+		"lines": 1,
+		"name": "Blue",
+		"new": true,
+		"node name": "@DialogueNode@9855",
+		"paired": false,
+		"pics to move": [],
+		"picture path": [
+			"res://assets/godot_icon_500_blue.jpg",
+			"res://assets/godot_icon_500_green.jpg"
+		],
+		"picture pos x": [
+			350,
+			1000
+		],
+		"picture pos y": [
+			210,
+			210
+		],
+		"picture size x": [
+			504,
+			504
+		],
+		"picture size y": [
+			504,
+			504
+		],
+		"picture to start": [
+			"PictureNode",
+			"@PictureNode@10259"
+		],
+		"pos x": 856,
+		"pos y": 830,
+		"show frame": true,
+		"sound dict": [
+			{
+				"await sound": true,
+				"new track": false,
+				"play sound": false,
+				"sound path": ""
+			},
+			{
+				"await sound": true,
+				"new track": false,
+				"play sound": false,
+				"sound path": ""
+			}
+		],
+		"speaker option": 0,
+		"speaker pos x": 453,
+		"speaker pos y": 237,
+		"start picture": true,
+		"text": "Hello.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 156
+	},
+	"3": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"frame pos x": 1105,
+		"frame pos y": 336,
+		"frame preset": 0,
+		"frame size x": 300,
+		"frame size y": 300,
+		"include size": false,
+		"lines": 1,
+		"name": "Green",
+		"new": true,
+		"node name": "@DialogueNode@10493",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 856,
+		"pos y": 830,
+		"show frame": true,
+		"speaker option": 0,
+		"speaker pos x": 1105,
+		"speaker pos y": 263,
+		"start picture": false,
+		"text": "Hello.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 156
+	},
+	"4": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": true,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@10727",
+		"paired": false,
+		"pics to move": [],
+		"picture to end": [
+			"PictureNode",
+			"@PictureNode@10259"
+		],
+		"pos x": 349,
+		"pos y": 800,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Frame positions can also be saved as presets.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1170
+	},
+	"5": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 2,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@10961",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 479,
+		"pos y": 463,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Finally, Dialogue Nodes can be used\nto change the BGM.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 910
+	},
+	"6": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": true,
+			"sound path": "res://audio/music/freesound/736586__josefpres__piano-loops-156-efect-octave-long-loop-120-bpm.mp3"
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@11195",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 648,
+		"pos y": 498,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "You can start music...",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 572
+	},
+	"7": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": true,
+			"sound path": "res://audio/music/background_track-01.mp3"
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@11429",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 622,
+		"pos y": 498,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Change to a new track...",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 624
+	},
+	"8": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": true,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 2,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@11663",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 427,
+		"pos y": 463,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Or stop the music altogether by leaving\nthe path blank.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1014
+	},
+	"9": {
+		"auto_lines": true,
+		"auto_width": false,
+		"dialogue center x": true,
+		"dialogue center y": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 2,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@11897",
+		"paired": false,
+		"pics to move": [],
+		"pos x": 297,
+		"pos y": 463,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "That about covers the basics of Dialogue Nodes\nand textboxes.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1274
+	}
+}

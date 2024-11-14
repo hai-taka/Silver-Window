@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://oft8gm5w4lxq"]
+
+[ext_resource type="Script" path="res://Backgrounds/shapes/square_shape.gd" id="1_i62o8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no4gu"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+
+[node name="SquareShape" type="Panel"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 264.0
+offset_bottom = 264.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_no4gu")
+script = ExtResource("1_i62o8")
+metadata/_edit_lock_ = true

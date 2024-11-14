@@ -1,0 +1,297 @@
+[gd_scene load_steps=20 format=3 uid="uid://b3gd6caadxws3"]
+
+[ext_resource type="Theme" uid="uid://1h40sciui403" path="res://themes/main_menu_theme.tres" id="1_als0h"]
+[ext_resource type="Script" path="res://main_menu.gd" id="3_apqqn"]
+[ext_resource type="Resource" uid="uid://dsc10ieen2nx6" path="res://resources/Data/main_menu_colors.tres" id="3_fepnw"]
+[ext_resource type="Script" path="res://main_menu_button.gd" id="4_0yga4"]
+[ext_resource type="Script" path="res://resources/RichTextEffects/rich_text_rain.gd" id="4_lx1xf"]
+[ext_resource type="FontFile" uid="uid://cu3h8aagnkwja" path="res://fonts/Dynamic/Zen_Antique/ZenAntique-Regular.ttf" id="4_pjbwm"]
+[ext_resource type="Script" path="res://resources/RichTextEffects/rich_text_sparkle.gd" id="5_ycgd2"]
+[ext_resource type="Texture2D" uid="uid://bynfbr261bn0x" path="res://assets/MainMenu/eyes-1.png" id="6_il057"]
+[ext_resource type="Script" path="res://resources/RichTextEffects/rich_text_rain2.gd" id="6_ilryc"]
+[ext_resource type="Script" path="res://resources/RichTextEffects/rich_text_ghost.gd" id="7_5tets"]
+[ext_resource type="Script" path="res://resources/RichTextEffects/rich_text_pulse.gd" id="8_83hbx"]
+[ext_resource type="PackedScene" uid="uid://dkhfs8w00kk13" path="res://options_menu.tscn" id="11_ocms2"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_kf2tm"]
+script = ExtResource("5_ycgd2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5f8s4"]
+draw_center = false
+border_width_bottom = 2
+border_color = Color(0.752941, 0.752941, 0.752941, 1)
+anti_aliasing = false
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_mja8c"]
+script = ExtResource("4_lx1xf")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_cwr7i"]
+script = ExtResource("6_ilryc")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_vc3wh"]
+script = ExtResource("7_5tets")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_6p2oc"]
+script = ExtResource("8_83hbx")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldgme"]
+bg_color = Color(0, 0, 0, 1)
+border_width_right = 6
+border_color = Color(0.752941, 0.752941, 0.752941, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_als0h")
+script = ExtResource("3_apqqn")
+menu_colors = ExtResource("3_fepnw")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="MainPanel" type="PanelContainer" parent="CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="PanelInnerMargin" type="MarginContainer" parent="CenterContainer/MainPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MainPanel/PanelInnerMargin"]
+layout_mode = 2
+alignment = 1
+
+[node name="GameTitle" type="RichTextLabel" parent="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("4_pjbwm")
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "[center]SILVER WINDOW[/center]"
+scroll_active = false
+autowrap_mode = 0
+custom_effects = [SubResource("RichTextEffect_kf2tm")]
+
+[node name="GameLogo" type="TextureRect" parent="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("6_il057")
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MenuItemMargin" type="MarginContainer" parent="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_right = 150
+
+[node name="MenuItemPanel" type="PanelContainer" parent="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_5f8s4")
+
+[node name="MenuItemHBox" type="HBoxContainer" parent="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="NewGameButton" type="Button" parent="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox" node_paths=PackedStringArray("main_menu")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../QuitButton")
+focus_previous = NodePath("../QuitButton")
+text = "New Game"
+script = ExtResource("4_0yga4")
+main_menu = NodePath("../../../../../../../..")
+metadata/_edit_group_ = true
+
+[node name="NewGameLabel" type="RichTextLabel" parent="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/NewGameButton"]
+clip_contents = false
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 53.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "New Game"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+custom_effects = [SubResource("RichTextEffect_mja8c"), SubResource("RichTextEffect_cwr7i"), SubResource("RichTextEffect_vc3wh"), SubResource("RichTextEffect_6p2oc")]
+
+[node name="LoadButton" type="Button" parent="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox" node_paths=PackedStringArray("main_menu")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_right = NodePath("../OptButton")
+focus_next = NodePath("../OptButton")
+text = "Load"
+script = ExtResource("4_0yga4")
+main_menu = NodePath("../../../../../../../..")
+metadata/_edit_group_ = true
+
+[node name="LoadLabel" type="RichTextLabel" parent="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/LoadButton"]
+clip_contents = false
+layout_mode = 0
+offset_right = 1.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "Load"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+custom_effects = [SubResource("RichTextEffect_mja8c"), SubResource("RichTextEffect_cwr7i"), SubResource("RichTextEffect_vc3wh"), SubResource("RichTextEffect_6p2oc")]
+
+[node name="OptButton" type="Button" parent="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox" node_paths=PackedStringArray("main_menu")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../LoadButton")
+focus_neighbor_right = NodePath("../QuitButton")
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../LoadButton")
+text = "Options"
+script = ExtResource("4_0yga4")
+main_menu = NodePath("../../../../../../../..")
+metadata/_edit_group_ = true
+
+[node name="OptLabel" type="RichTextLabel" parent="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/OptButton"]
+clip_contents = false
+layout_mode = 0
+offset_right = 1.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "Options"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+custom_effects = [SubResource("RichTextEffect_mja8c"), SubResource("RichTextEffect_cwr7i"), SubResource("RichTextEffect_vc3wh"), SubResource("RichTextEffect_6p2oc")]
+
+[node name="QuitButton" type="Button" parent="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox" node_paths=PackedStringArray("main_menu")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../OptButton")
+focus_neighbor_right = NodePath("../NewGameButton")
+focus_next = NodePath("../NewGameButton")
+focus_previous = NodePath("../OptButton")
+text = "Quit"
+script = ExtResource("4_0yga4")
+main_menu = NodePath("../../../../../../../..")
+metadata/_edit_group_ = true
+
+[node name="QuitLabel" type="RichTextLabel" parent="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/QuitButton"]
+clip_contents = false
+layout_mode = 0
+offset_right = 1.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "Quit"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+custom_effects = [SubResource("RichTextEffect_mja8c"), SubResource("RichTextEffect_cwr7i"), SubResource("RichTextEffect_vc3wh"), SubResource("RichTextEffect_6p2oc")]
+
+[node name="WipeMargin" type="MarginContainer" parent="CenterContainer/MainPanel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_right = 1270
+
+[node name="WipePanel" type="Panel" parent="CenterContainer/MainPanel/WipeMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ldgme")
+
+[node name="OptionsMenu" parent="." instance=ExtResource("11_ocms2")]
+visible = false
+layout_mode = 1
+
+[node name="PressAnyControl" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="PressAnyLabel" type="Label" parent="PressAnyControl"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -77.5
+offset_top = -305.0
+offset_right = 77.5
+offset_bottom = -254.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Press Any"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[connection signal="focus_entered" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/NewGameButton" to="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/NewGameButton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/NewGameButton" to="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/NewGameButton" method="_on_focus_exited"]
+[connection signal="pressed" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="mouse_entered" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/NewGameButton/NewGameLabel" to="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/NewGameButton" method="_on_new_game_label_mouse_entered"]
+[connection signal="focus_entered" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/LoadButton" to="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/LoadButton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/LoadButton" to="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/LoadButton" method="_on_focus_exited"]
+[connection signal="pressed" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="mouse_entered" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/LoadButton/LoadLabel" to="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/LoadButton" method="_on_new_game_label_mouse_entered"]
+[connection signal="focus_entered" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/OptButton" to="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/OptButton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/OptButton" to="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/OptButton" method="_on_focus_exited"]
+[connection signal="pressed" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/OptButton" to="." method="_on_opt_button_pressed"]
+[connection signal="mouse_entered" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/OptButton/OptLabel" to="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/OptButton" method="_on_new_game_label_mouse_entered"]
+[connection signal="focus_entered" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/QuitButton" to="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/QuitButton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/QuitButton" to="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/QuitButton" method="_on_focus_exited"]
+[connection signal="pressed" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="mouse_entered" from="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/QuitButton/QuitLabel" to="CenterContainer/MainPanel/PanelInnerMargin/VBoxContainer/MenuItemMargin/MenuItemPanel/MenuItemHBox/QuitButton" method="_on_new_game_label_mouse_entered"]
+[connection signal="gui_input" from="PressAnyControl" to="." method="_on_press_any_control_gui_input"]
+[connection signal="visibility_changed" from="PressAnyControl" to="." method="_on_press_any_control_visibility_changed"]

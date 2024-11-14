@@ -1,0 +1,101 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b8pd513m6kkjk"]
+
+[ext_resource type="Script" path="res://resources/Data/visual_editor_theme.gd" id="1_ofka1"]
+
+[resource]
+script = ExtResource("1_ofka1")
+theme_dict = {
+"demo": {
+"bg dict": {
+"anim color": "000000ff",
+"animation": 0,
+"bott color": "bfbfbfff",
+"bott offset": 91.0,
+"line color 1": "000000ff",
+"line color 2": "000000ff",
+"line color 3": "000000ff",
+"line color 4": "000000ff",
+"path": "",
+"ripple delay": 6.0,
+"solid color": "000000ff",
+"top color": "424242ff",
+"top offset": 21.0,
+"type": 1
+},
+"border color": Color(0.752941, 0.752941, 0.752941, 1),
+"border width": 2.0,
+"box bg color": Color(0, 0, 0, 1),
+"cursor color": Color(0.694118, 0.694118, 0.694118, 1),
+"frame color": Color(1, 1, 1, 0.901961),
+"frame width": 2.0,
+"name color": Color(0.858824, 0.858824, 0.858824, 1),
+"silver location bg": Color(0.752941, 0.752941, 0.752941, 1),
+"silver location text": Color(0, 0, 0, 1),
+"text color": Color(0.694118, 0.694118, 0.694118, 1),
+"twenty-five line color": Color(1, 1, 1, 1),
+"twenty-five text color": Color(1, 1, 1, 1),
+"wipe color": Color(0.788235, 0.788235, 0.788235, 1)
+},
+"other": {
+"bg dict": {
+"anim color": "000000ff",
+"animation": 0,
+"bott color": "c76787ff",
+"bott offset": 69.0,
+"line color 1": "000000ff",
+"line color 2": "000000ff",
+"line color 3": "000000ff",
+"line color 4": "000000ff",
+"path": "",
+"ripple delay": 6.0,
+"solid color": "bfaf7cff",
+"top color": "5b4a75ff",
+"top offset": 21.0,
+"type": 1
+},
+"border color": Color(0.564706, 0.0627451, 0.619608, 1),
+"border width": 2.0,
+"box bg color": Color(0, 0, 0, 1),
+"cursor color": Color(0.694118, 0.694118, 0.694118, 1),
+"frame color": Color(1, 1, 1, 0.901961),
+"frame width": 2.0,
+"name color": Color(0.858824, 0.858824, 0.858824, 1),
+"silver location bg": Color(0.521569, 0.14902, 0.541176, 1),
+"silver location text": Color(0, 0, 0, 1),
+"text color": Color(0.694118, 0.694118, 0.694118, 1),
+"twenty-five line color": Color(1, 1, 1, 1),
+"twenty-five text color": Color(1, 1, 1, 1),
+"wipe color": Color(0, 0.831373, 0.792157, 1)
+},
+"picture-demo": {
+"bg dict": {
+"anim color": "000000ff",
+"animation": 0,
+"bott color": "bb4333ff",
+"bott offset": 91.0,
+"line color 1": "000000ff",
+"line color 2": "000000ff",
+"line color 3": "000000ff",
+"line color 4": "000000ff",
+"path": "",
+"ripple delay": 6.0,
+"solid color": "434343ff",
+"top color": "1c2c7bff",
+"top offset": 21.0,
+"type": 1
+},
+"border color": Color(0.819608, 0.00392157, 0.00392157, 1),
+"border width": 2.0,
+"box bg color": Color(0, 0, 0, 1),
+"cursor color": Color(0.694118, 0.694118, 0.694118, 1),
+"frame color": Color(1, 1, 1, 0.901961),
+"frame width": 2.0,
+"name color": Color(0.858824, 0.858824, 0.858824, 1),
+"silver location bg": Color(0.752941, 0.752941, 0.752941, 1),
+"silver location text": Color(0, 0, 0, 1),
+"text color": Color(0.694118, 0.694118, 0.694118, 1),
+"twenty-five line color": Color(1, 1, 1, 1),
+"twenty-five text color": Color(1, 1, 1, 1),
+"wipe color": Color(0.819608, 0.00392157, 0.00392157, 1)
+}
+}

@@ -1,0 +1,191 @@
+[gd_scene load_steps=17 format=3 uid="uid://dhhtxwlr7cm0e"]
+
+[ext_resource type="Texture2D" uid="uid://buyan18ce4jhy" path="res://assets/Moon/moon_1.png" id="1_l052j"]
+[ext_resource type="Script" path="res://end_card.gd" id="1_wji1x"]
+[ext_resource type="LabelSettings" uid="uid://b2nvd6il6qb87" path="res://themes/Label Settings/end_card_label_settings.tres" id="3_q3irr"]
+[ext_resource type="FontFile" uid="uid://c3iuhyujongnc" path="res://fonts/Dynamic/Archivo_Black/ArchivoBlack-Regular.ttf" id="4_k6uw2"]
+[ext_resource type="Script" path="res://resources/RichTextEffects/rich_text_ghost.gd" id="5_671qi"]
+[ext_resource type="Script" path="res://resources/RichTextEffects/rich_text_pulse.gd" id="6_2m6bd"]
+[ext_resource type="Script" path="res://resources/RichTextEffects/rich_text_matrix.gd" id="7_xy7ah"]
+[ext_resource type="Script" path="res://resources/RichTextEffects/rich_text_rain.gd" id="8_2oig1"]
+[ext_resource type="Script" path="res://resources/RichTextEffects/rich_text_rain2.gd" id="9_qmh74"]
+[ext_resource type="FontFile" uid="uid://dybluv2thuypa" path="res://fonts/Dynamic/Noto_Sans/NotoSans-Black.ttf" id="10_tocou"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_ysgco"]
+script = ExtResource("5_671qi")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_uilqh"]
+script = ExtResource("6_2m6bd")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_l88t1"]
+script = ExtResource("7_xy7ah")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_ab4in"]
+script = ExtResource("8_2oig1")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_t5xy4"]
+script = ExtResource("9_qmh74")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nayu"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[node name="EndCard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wji1x")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="MoonTextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.501961, 0.211765, 0.2, 1)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -890.0
+offset_top = -350.0
+offset_right = -190.0
+offset_bottom = 350.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("1_l052j")
+metadata/_edit_lock_ = true
+
+[node name="ChapterLabel" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 420.0
+offset_bottom = 195.0
+text = "decoyman"
+label_settings = ExtResource("3_q3irr")
+uppercase = true
+
+[node name="ChapterColorRect" type="ColorRect" parent="ChapterLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="NextLabel" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -195.0
+offset_right = 1246.0
+offset_bottom = -50.0
+grow_vertical = 0
+text = "next chapter is coming soon..."
+label_settings = ExtResource("3_q3irr")
+vertical_alignment = 2
+uppercase = true
+
+[node name="NextColorRect" type="ColorRect" parent="NextLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MoonPhrase" type="RichTextLabel" parent="."]
+visible = false
+clip_contents = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -11.5
+offset_right = -233.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_k6uw2")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "Hello World"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+custom_effects = [SubResource("RichTextEffect_ysgco"), SubResource("RichTextEffect_uilqh"), SubResource("RichTextEffect_l88t1"), SubResource("RichTextEffect_ab4in"), SubResource("RichTextEffect_t5xy4")]
+
+[node name="EndBG" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="EndBG"]
+layout_mode = 0
+offset_left = 652.0
+offset_top = 485.0
+offset_right = 1268.0
+offset_bottom = 617.0
+color = Color(0.733333, 0.733333, 0.733333, 1)
+metadata/_edit_lock_ = true
+
+[node name="EndContainer" type="CenterContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="EndContainer"]
+custom_minimum_size = Vector2(594, 126)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3nayu")
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="EndContainer/PanelContainer"]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="EndContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.156863, 0.156863, 0.156863, 1)
+theme_override_fonts/font = ExtResource("10_tocou")
+theme_override_font_sizes/font_size = 72
+text = "The End"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_lock_ = true

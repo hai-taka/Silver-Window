@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3nejnxy3nayd"]
+
+[ext_resource type="Script" path="res://Backgrounds/shapes/moving_line.gd" id="1_gdyrt"]
+
+[node name="MovingLine" type="ColorRect"]
+offset_left = -2880.0
+offset_top = 100.0
+offset_bottom = 140.0
+mouse_filter = 2
+script = ExtResource("1_gdyrt")

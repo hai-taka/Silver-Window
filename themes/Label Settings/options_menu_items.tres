@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://db0crq05ry2ou"]
+
+[ext_resource type="FontFile" uid="uid://cagqx7tihbohl" path="res://fonts/Dynamic/Zen_Old_Mincho/ZenOldMincho-Regular.ttf" id="1_o4862"]
+
+[resource]
+font = ExtResource("1_o4862")
+font_size = 32

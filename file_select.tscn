@@ -1,0 +1,562 @@
+[gd_scene load_steps=5 format=3 uid="uid://ht5fhjskfrny"]
+
+[ext_resource type="Script" path="res://file_select.gd" id="1_ei0t7"]
+[ext_resource type="Theme" uid="uid://1h40sciui403" path="res://themes/main_menu_theme.tres" id="1_mqajs"]
+[ext_resource type="Texture2D" uid="uid://cjigiox2easr7" path="res://Icons/Boxicons/PNGs/florist-solid-48.png" id="3_syhwy"]
+[ext_resource type="FontFile" uid="uid://cu3h8aagnkwja" path="res://fonts/Dynamic/Zen_Antique/ZenAntique-Regular.ttf" id="4_kafci"]
+
+[node name="FileSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mqajs")
+script = ExtResource("1_ei0t7")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="InnerMargin" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 100
+metadata/_edit_lock_ = true
+
+[node name="FileVBox" type="VBoxContainer" parent="CenterContainer/PanelContainer/InnerMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 21
+metadata/_edit_lock_ = true
+
+[node name="SavePanel1" type="PanelContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(876, 158)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../../../Control/BackButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../SavePanel2")
+focus_next = NodePath("../SavePanel2")
+focus_previous = NodePath("../../../Control/BackButton")
+focus_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/MarginContainer"]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="SlotLabel1" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 84
+text = "01"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SaveInfoVBox1" type="VBoxContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/MarginContainer/HBoxContainer/SaveInfoVBox1"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 40
+
+[node name="ChapterLabel1" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/MarginContainer/HBoxContainer/SaveInfoVBox1/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Chapter"
+clip_text = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/MarginContainer/HBoxContainer/SaveInfoVBox1"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/MarginContainer/HBoxContainer/SaveInfoVBox1/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="DateLabel1" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/MarginContainer/HBoxContainer/SaveInfoVBox1/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Date"
+vertical_alignment = 2
+
+[node name="PlayTimeLabel1" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/MarginContainer/HBoxContainer/SaveInfoVBox1/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play Time: "
+vertical_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/MarginContainer/HBoxContainer/SaveInfoVBox1"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/MarginContainer/HBoxContainer/SaveInfoVBox1"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Control2" type="Control" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BlankContainer1" type="CenterContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="BlankLabel" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/BlankContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Blank"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CompletionIcon1" type="TextureRect" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel1/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 58.0
+grow_horizontal = 0
+texture = ExtResource("3_syhwy")
+stretch_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="SavePanel2" type="PanelContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(876, 158)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../SavePanel1")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../SavePanel3")
+focus_next = NodePath("../SavePanel3")
+focus_previous = NodePath("../SavePanel1")
+focus_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/MarginContainer"]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="SlotLabel2" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 84
+text = "02"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SaveInfoVBox2" type="VBoxContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/MarginContainer/HBoxContainer/SaveInfoVBox2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 40
+
+[node name="ChapterLabel2" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/MarginContainer/HBoxContainer/SaveInfoVBox2/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Chapter"
+clip_text = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/MarginContainer/HBoxContainer/SaveInfoVBox2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/MarginContainer/HBoxContainer/SaveInfoVBox2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="DateLabel2" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/MarginContainer/HBoxContainer/SaveInfoVBox2/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Date"
+vertical_alignment = 2
+
+[node name="PlayTimeLabel2" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/MarginContainer/HBoxContainer/SaveInfoVBox2/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play Time: "
+vertical_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/MarginContainer/HBoxContainer/SaveInfoVBox2"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/MarginContainer/HBoxContainer/SaveInfoVBox2"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Control2" type="Control" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BlankContainer2" type="CenterContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="BlankLabel2" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/BlankContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Blank"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CompletionIcon2" type="TextureRect" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel2/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 58.0
+grow_horizontal = 0
+texture = ExtResource("3_syhwy")
+stretch_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="SavePanel3" type="PanelContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(876, 158)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../SavePanel2")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../../../Control/BackButton")
+focus_next = NodePath("../../../Control/BackButton")
+focus_previous = NodePath("../SavePanel2")
+focus_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/MarginContainer"]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="SlotLabel3" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 84
+text = "03"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SaveInfoVBox3" type="VBoxContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/MarginContainer/HBoxContainer/SaveInfoVBox3"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 40
+
+[node name="ChapterLabel3" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/MarginContainer/HBoxContainer/SaveInfoVBox3/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Chapter"
+clip_text = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/MarginContainer/HBoxContainer/SaveInfoVBox3"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/MarginContainer/HBoxContainer/SaveInfoVBox3/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="DateLabel3" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/MarginContainer/HBoxContainer/SaveInfoVBox3/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Date"
+vertical_alignment = 2
+
+[node name="PlayTimeLabel3" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/MarginContainer/HBoxContainer/SaveInfoVBox3/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play Time: "
+vertical_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/MarginContainer/HBoxContainer/SaveInfoVBox3"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/MarginContainer/HBoxContainer/SaveInfoVBox3"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Control2" type="Control" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BlankContainer3" type="CenterContainer" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="BlankLabel3" type="Label" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/BlankContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Blank"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CompletionIcon3" type="TextureRect" parent="CenterContainer/PanelContainer/InnerMargin/FileVBox/SavePanel3/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 58.0
+grow_horizontal = 0
+texture = ExtResource("3_syhwy")
+stretch_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="MenuTitleLabel" type="Label" parent="CenterContainer/PanelContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_kafci")
+theme_override_font_sizes/font_size = 36
+text = "Load"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BackButton" type="Button" parent="CenterContainer/PanelContainer/Control" groups=["file_menu_buttons"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -78.0
+offset_right = 50.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../../InnerMargin/FileVBox/SavePanel3")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../../InnerMargin/FileVBox/SavePanel1")
+focus_next = NodePath("../../InnerMargin/FileVBox/SavePanel1")
+focus_previous = NodePath("../../InnerMargin/FileVBox/SavePanel3")
+text = "Back"
+metadata/_edit_lock_ = true
+
+[node name="OverwriteHBox" type="HBoxContainer" parent="CenterContainer/PanelContainer/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -81.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 30
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="OverwriteLabel" type="Label" parent="CenterContainer/PanelContainer/Control/OverwriteHBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Overwrite?"
+
+[node name="OverwriteYes" type="Button" parent="CenterContainer/PanelContainer/Control/OverwriteHBox" groups=["file_menu_buttons"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../OverwriteNo")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath("../OverwriteNo")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath("../OverwriteNo")
+focus_previous = NodePath("../OverwriteNo")
+text = "Yes"
+
+[node name="YesRichText" type="RichTextLabel" parent="CenterContainer/PanelContainer/Control/OverwriteHBox/OverwriteYes"]
+unique_name_in_owner = true
+visible = false
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center]Yes[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+metadata/_edit_lock_ = true
+
+[node name="OverwriteNo" type="Button" parent="CenterContainer/PanelContainer/Control/OverwriteHBox" groups=["file_menu_buttons"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../OverwriteYes")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath("../OverwriteYes")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath("../OverwriteYes")
+focus_previous = NodePath("../OverwriteYes")
+text = "No"
+
+[node name="NoRichText" type="RichTextLabel" parent="CenterContainer/PanelContainer/Control/OverwriteHBox/OverwriteNo"]
+unique_name_in_owner = true
+visible = false
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center]No[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/Control/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/Control/OverwriteHBox/OverwriteYes" to="." method="_on_overwrite_yes_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/Control/OverwriteHBox/OverwriteNo" to="." method="_on_overwrite_no_pressed"]

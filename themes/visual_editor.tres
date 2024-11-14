@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://fx5ge6odli3v"]
+
+[ext_resource type="StyleBox" uid="uid://cbsx6318ldkbg" path="res://themes/Styleboxes/visual_editor_panel.tres" id="1_hwkol"]
+
+[resource]
+PopupMenu/constants/item_end_padding = 10
+PopupMenu/constants/item_start_padding = 10
+PopupMenu/constants/v_separation = 10
+PopupMenu/styles/panel = ExtResource("1_hwkol")
+PopupPanel/styles/panel = ExtResource("1_hwkol")

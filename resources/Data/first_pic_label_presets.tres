@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://8dnoec37gj53"]
+
+[ext_resource type="Script" path="res://resources/Data/first_pic_label_presets.gd" id="1_yiur1"]
+
+[resource]
+script = ExtResource("1_yiur1")
+text_colors = {}

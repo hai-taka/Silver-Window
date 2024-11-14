@@ -1,0 +1,244 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2vm2syrijbdf"]
+
+[ext_resource type="Script" path="res://Backgrounds/shapes/viewfinder.gd" id="1_6mee5"]
+[ext_resource type="Texture2D" uid="uid://dun3wfvxfchu6" path="res://Backgrounds/shapes/textures/dot-90x120-20.png" id="2_kc432"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkvh2"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwj6m"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[node name="Viewfinder" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_6mee5")
+metadata/_edit_lock_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="CenterSquare" type="Panel" parent="CenterContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qkvh2")
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/CenterSquare"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/CenterSquare/CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_kc432")
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="CenterContainer"]
+custom_minimum_size = Vector2(1000, 500)
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="CenterContainer/Control" groups=["inner_rects"]]
+custom_minimum_size = Vector2(90, 120)
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jwj6m")
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Control/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("2_kc432")
+stretch_mode = 3
+
+[node name="Panel2" type="Panel" parent="CenterContainer/Control" groups=["inner_rects"]]
+custom_minimum_size = Vector2(90, 120)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -75.0
+offset_bottom = 100.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jwj6m")
+
+[node name="TextureRect2" type="TextureRect" parent="CenterContainer/Control/Panel2"]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 120.0
+mouse_filter = 2
+texture = ExtResource("2_kc432")
+stretch_mode = 3
+
+[node name="Panel3" type="Panel" parent="CenterContainer/Control" groups=["inner_rects"]]
+custom_minimum_size = Vector2(90, 120)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 75.0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jwj6m")
+
+[node name="TextureRect3" type="TextureRect" parent="CenterContainer/Control/Panel3"]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 120.0
+mouse_filter = 2
+texture = ExtResource("2_kc432")
+stretch_mode = 3
+
+[node name="Panel4" type="Panel" parent="CenterContainer/Control" groups=["inner_rects"]]
+custom_minimum_size = Vector2(90, 120)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jwj6m")
+
+[node name="TextureRect4" type="TextureRect" parent="CenterContainer/Control/Panel4"]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 120.0
+mouse_filter = 2
+texture = ExtResource("2_kc432")
+stretch_mode = 3
+
+[node name="Control2" type="Control" parent="CenterContainer"]
+custom_minimum_size = Vector2(1500, 800)
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Panel5" type="Panel" parent="CenterContainer/Control2" groups=["outer_rects"]]
+custom_minimum_size = Vector2(120, 90)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_right = 60.0
+offset_bottom = 90.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jwj6m")
+
+[node name="TextureRect7" type="TextureRect" parent="CenterContainer/Control2/Panel5"]
+layout_mode = 0
+offset_left = 120.0
+offset_right = 210.0
+offset_bottom = 120.0
+rotation = 1.5708
+mouse_filter = 2
+texture = ExtResource("2_kc432")
+stretch_mode = 3
+
+[node name="Panel6" type="Panel" parent="CenterContainer/Control2" groups=["outer_rects"]]
+custom_minimum_size = Vector2(90, 120)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 90.0
+offset_bottom = 60.0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jwj6m")
+
+[node name="TextureRect5" type="TextureRect" parent="CenterContainer/Control2/Panel6"]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 120.0
+mouse_filter = 2
+texture = ExtResource("2_kc432")
+stretch_mode = 3
+
+[node name="Panel7" type="Panel" parent="CenterContainer/Control2" groups=["outer_rects"]]
+custom_minimum_size = Vector2(90, 120)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -60.0
+offset_bottom = 60.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jwj6m")
+
+[node name="TextureRect6" type="TextureRect" parent="CenterContainer/Control2/Panel7"]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 120.0
+mouse_filter = 2
+texture = ExtResource("2_kc432")
+stretch_mode = 3
+
+[node name="Panel8" type="Panel" parent="CenterContainer/Control2" groups=["outer_rects"]]
+custom_minimum_size = Vector2(120, 90)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -90.0
+offset_right = 60.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jwj6m")
+
+[node name="TextureRect8" type="TextureRect" parent="CenterContainer/Control2/Panel8"]
+layout_mode = 0
+offset_left = 120.0
+offset_right = 210.0
+offset_bottom = 120.0
+rotation = 1.5708
+mouse_filter = 2
+texture = ExtResource("2_kc432")
+stretch_mode = 3

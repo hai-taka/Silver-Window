@@ -1,0 +1,533 @@
+[gd_scene load_steps=27 format=3 uid="uid://65n4ihxxbhv7"]
+
+[ext_resource type="Script" path="res://main1.gd" id="1_655ba"]
+[ext_resource type="StyleBox" uid="uid://d1mx1udb5jm2d" path="res://themes/Styleboxes/window_panel_container.tres" id="2_76c7c"]
+[ext_resource type="FontFile" uid="uid://bbx168m2dyg16" path="res://fonts/Dynamic/DotGothic16/DotGothic16-Regular.ttf" id="2_suoma"]
+[ext_resource type="LabelSettings" uid="uid://cikrp01tdn4pj" path="res://themes/Label Settings/name_label.tres" id="3_jv2oo"]
+[ext_resource type="Theme" uid="uid://bqqjjofo6o1t7" path="res://themes/window_theme.tres" id="3_kmbfx"]
+[ext_resource type="Script" path="res://speaker_name.gd" id="4_sy8tf"]
+[ext_resource type="Script" path="res://speaker_frame.gd" id="5_52av7"]
+[ext_resource type="StyleBox" uid="uid://ck6mgaru0jag8" path="res://themes/Styleboxes/Lines/location_style_box_line.tres" id="6_bt542"]
+[ext_resource type="FontFile" uid="uid://dqfmkx1mxfctr" path="res://fonts/Dynamic/Kosugi_Maru/KosugiMaru-Regular.ttf" id="7_80mgx"]
+[ext_resource type="StyleBox" uid="uid://df1a4q2o0l06b" path="res://themes/Styleboxes/wipe_stylebox.tres" id="7_hm7ay"]
+[ext_resource type="LabelSettings" uid="uid://c4li45yyalu01" path="res://themes/Label Settings/location_label_settings.tres" id="8_pamnr"]
+[ext_resource type="StyleBox" uid="uid://b3ag6cmgnfpvq" path="res://themes/Styleboxes/speaker_frame.tres" id="9_ouddu"]
+[ext_resource type="Script" path="res://frame_line_control.gd" id="9_unn2k"]
+[ext_resource type="StyleBox" uid="uid://jn7t0k3ecnj" path="res://themes/Styleboxes/Lines/frame_line_LR.tres" id="10_jepii"]
+[ext_resource type="StyleBox" uid="uid://cj16640xdv12l" path="res://themes/Styleboxes/Lines/frame_line_TB.tres" id="11_lviex"]
+[ext_resource type="StyleBox" uid="uid://dhs1yanvbnj1q" path="res://themes/Styleboxes/silver_style_location_panel.tres" id="18_2f445"]
+[ext_resource type="Script" path="res://twenty_five_header.gd" id="18_jbqih"]
+[ext_resource type="Script" path="res://silver_header.gd" id="18_vi186"]
+[ext_resource type="LabelSettings" uid="uid://uv8t8uspfxjh" path="res://themes/Label Settings/silver_style_label.tres" id="19_tjqhl"]
+[ext_resource type="Script" path="res://location_1.gd" id="20_4h8bm"]
+[ext_resource type="Script" path="res://location_2.gd" id="21_v7dmg"]
+[ext_resource type="Script" path="res://location_3.gd" id="22_7h533"]
+[ext_resource type="Script" path="res://location_4.gd" id="23_5whyc"]
+[ext_resource type="Script" path="res://chapter.gd" id="24_drwyf"]
+[ext_resource type="Script" path="res://location_margin.gd" id="27_ci5c0"]
+[ext_resource type="PackedScene" uid="uid://d2c1e4pxulr72" path="res://pause_screen.tscn" id="27_n4hja"]
+
+[node name="Main1" type="Node"]
+script = ExtResource("1_655ba")
+window_stylebox = ExtResource("2_76c7c")
+window_theme = ExtResource("3_kmbfx")
+frame_stylebox = ExtResource("9_ouddu")
+name_label_settings = ExtResource("3_jv2oo")
+framelines_lr_stylebox = ExtResource("10_jepii")
+framelines_tb_stylebox = ExtResource("11_lviex")
+wipe_stylebox = ExtResource("7_hm7ay")
+silver_location_stylebox = ExtResource("18_2f445")
+silver_label_settings = ExtResource("19_tjqhl")
+twenty_five_line_stylebox = ExtResource("6_bt542")
+twenty_five_label_settings = ExtResource("8_pamnr")
+
+[node name="BackgroundSolid" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+metadata/_edit_lock_ = true
+
+[node name="SpeakerName" type="Label" parent="."]
+visible = false
+top_level = true
+z_index = 1
+texture_filter = 1
+offset_right = 64.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.858824, 0.858824, 0.858824, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.568627)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("2_suoma")
+theme_override_font_sizes/font_size = 36
+text = "Name"
+label_settings = ExtResource("3_jv2oo")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_sy8tf")
+
+[node name="NameTimer" type="Timer" parent="SpeakerName"]
+one_shot = true
+
+[node name="SpeakerFrame" type="PanelContainer" parent="."]
+visible = false
+top_level = true
+z_index = 1
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("9_ouddu")
+script = ExtResource("5_52av7")
+
+[node name="HeaderContainer" type="HBoxContainer" parent="." node_paths=PackedStringArray("main")]
+unique_name_in_owner = true
+visible = false
+top_level = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -276.0
+offset_top = 20.0
+offset_right = 276.0
+offset_bottom = 60.0
+grow_horizontal = 2
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+script = ExtResource("18_jbqih")
+main = NodePath("..")
+
+[node name="VSeparator" type="VSeparator" parent="HeaderContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = ExtResource("6_bt542")
+
+[node name="Location1" type="Label" parent="HeaderContainer" node_paths=PackedStringArray("left_sep", "right_sep") groups=["location_labels"]]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_80mgx")
+theme_override_font_sizes/font_size = 24
+text = "Location"
+label_settings = ExtResource("8_pamnr")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("20_4h8bm")
+left_sep = NodePath("../VSeparator")
+right_sep = NodePath("../VSeparator2")
+
+[node name="VSeparator2" type="VSeparator" parent="HeaderContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = ExtResource("6_bt542")
+
+[node name="Location2" type="Label" parent="HeaderContainer" node_paths=PackedStringArray("left_sep", "right_sep") groups=["location_labels"]]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Location"
+label_settings = ExtResource("8_pamnr")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("21_v7dmg")
+left_sep = NodePath("../VSeparator2")
+right_sep = NodePath("../VSeparator3")
+
+[node name="VSeparator3" type="VSeparator" parent="HeaderContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = ExtResource("6_bt542")
+
+[node name="Location3" type="Label" parent="HeaderContainer" node_paths=PackedStringArray("left_sep", "right_sep") groups=["location_labels"]]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Location"
+label_settings = ExtResource("8_pamnr")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22_7h533")
+left_sep = NodePath("../VSeparator3")
+right_sep = NodePath("../VSeparator4")
+
+[node name="VSeparator4" type="VSeparator" parent="HeaderContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = ExtResource("6_bt542")
+
+[node name="Location4" type="Label" parent="HeaderContainer" node_paths=PackedStringArray("left_sep", "right_sep") groups=["location_labels"]]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Location"
+label_settings = ExtResource("8_pamnr")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("23_5whyc")
+left_sep = NodePath("../VSeparator4")
+right_sep = NodePath("../VSeparator5")
+
+[node name="VSeparator5" type="VSeparator" parent="HeaderContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = ExtResource("6_bt542")
+
+[node name="Chapter" type="Label" parent="HeaderContainer" node_paths=PackedStringArray("left_sep", "right_sep") groups=["location_labels"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Chapter"
+label_settings = ExtResource("8_pamnr")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("24_drwyf")
+left_sep = NodePath("../VSeparator5")
+right_sep = NodePath("../VSeparator6")
+
+[node name="VSeparator6" type="VSeparator" parent="HeaderContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = ExtResource("6_bt542")
+
+[node name="FrameLineControl" type="Control" parent="."]
+visible = false
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("9_unn2k")
+
+[node name="FrameLineL" type="PanelContainer" parent="FrameLineControl"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 2.0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("10_jepii")
+
+[node name="FrameLineR" type="PanelContainer" parent="FrameLineControl"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("10_jepii")
+
+[node name="FrameLineT" type="PanelContainer" parent="FrameLineControl"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("11_lviex")
+
+[node name="FrameLineB" type="PanelContainer" parent="FrameLineControl"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("11_lviex")
+
+[node name="RestartButton" type="Button" parent="."]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -285.0
+offset_top = 20.0
+offset_right = -220.0
+offset_bottom = 51.0
+grow_horizontal = 0
+text = "Restart"
+
+[node name="ReturnButton" type="Button" parent="."]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -210.0
+offset_top = 20.0
+offset_right = -78.0
+offset_bottom = 51.0
+grow_horizontal = 0
+text = "Return to Editor"
+
+[node name="QuitButton" type="Button" parent="."]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -65.0
+offset_top = 20.0
+offset_right = -23.0
+offset_bottom = 51.0
+grow_horizontal = 0
+text = "Quit"
+
+[node name="HeaderContainer2" type="HBoxContainer" parent="." node_paths=PackedStringArray("main")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -648.0
+offset_top = -75.0
+offset_right = 648.0
+offset_bottom = 75.0
+grow_horizontal = 2
+mouse_filter = 2
+script = ExtResource("18_vi186")
+main = NodePath("..")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HeaderContainer2"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="LocationMargin" type="MarginContainer" parent="HeaderContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_bottom = 75
+script = ExtResource("27_ci5c0")
+
+[node name="SilverPanel" type="PanelContainer" parent="HeaderContainer2/HBoxContainer/LocationMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("18_2f445")
+
+[node name="SilverMargin" type="MarginContainer" parent="HeaderContainer2/HBoxContainer/LocationMargin/SilverPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HeaderContainer2/HBoxContainer/LocationMargin/SilverPanel/SilverMargin"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="SilverLoc1" type="Label" parent="HeaderContainer2/HBoxContainer/LocationMargin/SilverPanel/SilverMargin/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Location"
+label_settings = ExtResource("19_tjqhl")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="HeaderContainer2/HBoxContainer/LocationMargin/SilverPanel"]
+visible = false
+layout_mode = 2
+
+[node name="LocationMargin2" type="MarginContainer" parent="HeaderContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_bottom = 75
+script = ExtResource("27_ci5c0")
+
+[node name="SilverPanel2" type="PanelContainer" parent="HeaderContainer2/HBoxContainer/LocationMargin2"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("18_2f445")
+
+[node name="SilverMargin2" type="MarginContainer" parent="HeaderContainer2/HBoxContainer/LocationMargin2/SilverPanel2"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HeaderContainer2/HBoxContainer/LocationMargin2/SilverPanel2/SilverMargin2"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="SilverLoc2" type="Label" parent="HeaderContainer2/HBoxContainer/LocationMargin2/SilverPanel2/SilverMargin2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Location"
+label_settings = ExtResource("19_tjqhl")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="HeaderContainer2/HBoxContainer/LocationMargin2/SilverPanel2"]
+visible = false
+layout_mode = 2
+
+[node name="LocationMargin3" type="MarginContainer" parent="HeaderContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_bottom = 75
+script = ExtResource("27_ci5c0")
+
+[node name="SilverPanel3" type="PanelContainer" parent="HeaderContainer2/HBoxContainer/LocationMargin3"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("18_2f445")
+
+[node name="SilverMargin3" type="MarginContainer" parent="HeaderContainer2/HBoxContainer/LocationMargin3/SilverPanel3"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HeaderContainer2/HBoxContainer/LocationMargin3/SilverPanel3/SilverMargin3"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="SilverLoc3" type="Label" parent="HeaderContainer2/HBoxContainer/LocationMargin3/SilverPanel3/SilverMargin3/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Location"
+label_settings = ExtResource("19_tjqhl")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="HeaderContainer2/HBoxContainer/LocationMargin3/SilverPanel3"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="LocationMargin4" type="MarginContainer" parent="HeaderContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_bottom = 75
+script = ExtResource("27_ci5c0")
+
+[node name="SilverPanel4" type="PanelContainer" parent="HeaderContainer2/HBoxContainer/LocationMargin4"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("18_2f445")
+
+[node name="SilverMargin4" type="MarginContainer" parent="HeaderContainer2/HBoxContainer/LocationMargin4/SilverPanel4"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HeaderContainer2/HBoxContainer/LocationMargin4/SilverPanel4/SilverMargin4"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="SilverLoc4" type="Label" parent="HeaderContainer2/HBoxContainer/LocationMargin4/SilverPanel4/SilverMargin4/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Location"
+label_settings = ExtResource("19_tjqhl")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="HeaderContainer2/HBoxContainer/LocationMargin4/SilverPanel4"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HeaderContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+alignment = 2
+
+[node name="LocationMargin5" type="MarginContainer" parent="HeaderContainer2/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_bottom = 75
+script = ExtResource("27_ci5c0")
+
+[node name="SilverPanel5" type="PanelContainer" parent="HeaderContainer2/HBoxContainer2/LocationMargin5"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("18_2f445")
+
+[node name="SilverMargin5" type="MarginContainer" parent="HeaderContainer2/HBoxContainer2/LocationMargin5/SilverPanel5"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HeaderContainer2/HBoxContainer2/LocationMargin5/SilverPanel5/SilverMargin5"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="SilverChap" type="Label" parent="HeaderContainer2/HBoxContainer2/LocationMargin5/SilverPanel5/SilverMargin5/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Chapter"
+label_settings = ExtResource("19_tjqhl")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="HeaderContainer2/HBoxContainer2/LocationMargin5/SilverPanel5"]
+visible = false
+layout_mode = 2
+
+[node name="TestButton" type="Button" parent="."]
+visible = false
+offset_left = 950.0
+offset_top = 70.0
+offset_right = 991.0
+offset_bottom = 101.0
+text = "Test"
+
+[node name="PauseScreen" parent="." instance=ExtResource("27_n4hja")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="timeout" from="SpeakerName/NameTimer" to="SpeakerName" method="_on_name_timer_timeout"]
+[connection signal="all_labels_restored" from="HeaderContainer" to="HeaderContainer" method="_on_all_labels_restored"]
+[connection signal="restore_finished" from="HeaderContainer/Location1" to="HeaderContainer" method="_on_location_1_restore_finished"]
+[connection signal="restore_finished" from="HeaderContainer/Location2" to="HeaderContainer" method="_on_location_2_restore_finished"]
+[connection signal="restore_finished" from="HeaderContainer/Location3" to="HeaderContainer" method="_on_location_3_restore_finished"]
+[connection signal="restore_finished" from="HeaderContainer/Location4" to="HeaderContainer" method="_on_location_4_restore_finished"]
+[connection signal="restore_finished" from="HeaderContainer/Chapter" to="HeaderContainer" method="_on_chapter_restore_finished"]
+[connection signal="frame_lines_finished" from="FrameLineControl" to="SpeakerName" method="_on_frame_line_control_frame_lines_finished"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="visibility_changed" from="HeaderContainer2/HBoxContainer/LocationMargin3/SilverPanel3/ColorRect" to="." method="_on_color_rect_visibility_changed"]
+[connection signal="pressed" from="TestButton" to="HeaderContainer" method="_on_test_button_pressed"]

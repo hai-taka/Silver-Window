@@ -1,0 +1,411 @@
+{
+	"0": {
+		"25 line color": "ffffffff",
+		"25 text color": "ffffffff",
+		"auto_lines": true,
+		"auto_width": true,
+		"bg dict": {
+			"anim color": "000000ff",
+			"animation": 0,
+			"bott color": "bb4333ff",
+			"bott offset": 91,
+			"line color 1": "000000ff",
+			"line color 2": "000000ff",
+			"line color 3": "000000ff",
+			"line color 4": "000000ff",
+			"path": "",
+			"ripple delay": 6,
+			"solid color": "434343ff",
+			"top color": "1c2c7bff",
+			"top offset": 21,
+			"type": 1
+		},
+		"border color": "d10101ff",
+		"border width": 2,
+		"box bg color": "000000ff",
+		"center x": [
+			false
+		],
+		"center y": [
+			false
+		],
+		"cursor color": "b1b1b1ff",
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": true,
+			"sound path": "res://audio/music/background_track-01.mp3"
+		},
+		"end picture": false,
+		"fade in": [
+			false
+		],
+		"fade in color": [
+			"000000ff"
+		],
+		"fade in duration": [
+			3
+		],
+		"fade in solid": [
+			true
+		],
+		"fade out": [
+			false
+		],
+		"fade out color": [
+			"000000ff"
+		],
+		"fade out duration": [
+			1
+		],
+		"fade out solid": [
+			true
+		],
+		"first pic dict": [
+			{
+				"bott 1": "",
+				"bott 2": "",
+				"color": "ffffffff",
+				"top 1": "",
+				"top 2": ""
+			}
+		],
+		"frame color": "ffffffe6",
+		"frame preset dict": {
+
+		},
+		"frame preset id": 1,
+		"frame width": 2,
+		"include size": false,
+		"lines": 3,
+		"loc bg color": "c0c0c0ff",
+		"loc text color": "000000ff",
+		"location dict": {
+			"chapter": "Chapter",
+			"loc 1": "Location",
+			"loc 2": "",
+			"loc 3": "",
+			"loc 4": "",
+			"show": false,
+			"type": 0
+		},
+		"margin dict": {
+			"bottom": 20,
+			"left": 20,
+			"pair lr": false,
+			"pair tb": false,
+			"right": 20,
+			"show": true,
+			"top": 100
+		},
+		"name": "",
+		"name color": "dbdbdbff",
+		"new": true,
+		"node name": "@DialogueNode@5393",
+		"paired": false,
+		"pics to move": [],
+		"picture path": [
+			"res://assets/godot_icon_500_blue.jpg"
+		],
+		"picture pos x": [
+			190
+		],
+		"picture pos y": [
+			120
+		],
+		"picture size x": [
+			504
+		],
+		"picture size y": [
+			504
+		],
+		"picture to start": [
+			"@PictureNode@5596"
+		],
+		"pos x": 271,
+		"pos y": 710,
+		"position offset dict": {
+			"@DialogueNode@5393": {
+				"x": 495,
+				"y": 358.75
+			},
+			"@DialogueNode@5830": {
+				"x": 1260,
+				"y": 420
+			},
+			"@DialogueNode@6064": {
+				"x": 2040,
+				"y": 480
+			},
+			"@DialogueNode@6488": {
+				"x": 2860,
+				"y": 540
+			},
+			"@DialogueNode@6913": {
+				"x": 3700,
+				"y": 600
+			},
+			"@DialogueNode@7338": {
+				"x": 4680,
+				"y": 600
+			},
+			"@DialogueNode@7572": {
+				"x": 5520,
+				"y": 640
+			},
+			"@MoveNode@6680": {
+				"x": 2240,
+				"y": 1800
+			},
+			"@MoveNode@7105": {
+				"x": 2920,
+				"y": 2060
+			},
+			"@PictureNode@5596": {
+				"x": 640,
+				"y": 1340
+			},
+			"@TransitionNode@7777": {
+				"x": 6340,
+				"y": 960
+			},
+			"MoveNode": {
+				"x": 1340,
+				"y": 1680
+			}
+		},
+		"show frame": false,
+		"sound dict": [
+			{
+				"await sound": true,
+				"new track": false,
+				"play sound": false,
+				"sound path": ""
+			}
+		],
+		"speaker option": 0,
+		"start picture": true,
+		"text": "After a picture is displayed, you may find yourself\nwanting to change its location or to play a new\nsound effect.",
+		"text color": "b1b1b1ff",
+		"text preset dict": {
+
+		},
+		"text preset id": 1,
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1326,
+		"wipe color": "d10101ff"
+	},
+	"1": {
+		"auto_width": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"name": "",
+		"new": false,
+		"node name": "@DialogueNode@5830",
+		"pics to move": [],
+		"speaker option": 0,
+		"start picture": false,
+		"text": "You can accomplish this with an update node.",
+		"type": "text",
+		"width": 1144,
+		"wipe": true
+	},
+	"2": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@6064",
+		"paired": false,
+		"pics to move": [
+			{
+				"delay after": 0,
+				"delay before": 0,
+				"move node name": "MoveNode",
+				"move type": 0,
+				"new path": "",
+				"new pos x": 1150,
+				"new pos y": 120,
+				"pic": "@PictureNode@5596:<GraphNode#565257982462>",
+				"pic name": "@PictureNode@5596",
+				"sound dict": {
+					"new track": false,
+					"play sound": false,
+					"sound path": ""
+				}
+			}
+		],
+		"pos x": 726,
+		"pos y": 800,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Position change.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 416
+	},
+	"3": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@6488",
+		"paired": false,
+		"pics to move": [
+			{
+				"delay after": 0,
+				"delay before": 0,
+				"move node name": "@MoveNode@6680",
+				"move type": 3,
+				"new path": "",
+				"new pos x": 0,
+				"new pos y": 0,
+				"pic": "@PictureNode@5596:<GraphNode#565257982462>",
+				"pic name": "@PictureNode@5596",
+				"sound dict": {
+					"new track": false,
+					"play sound": true,
+					"sound path": "res://audio/sfx/other/random (3).wav"
+				}
+			}
+		],
+		"pos x": 765,
+		"pos y": 800,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "Sound effect.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 338
+	},
+	"4": {
+		"auto_lines": true,
+		"auto_width": true,
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"include size": false,
+		"lines": 1,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@6913",
+		"paired": false,
+		"pics to move": [
+			{
+				"delay after": 0,
+				"delay before": 0,
+				"move node name": "@MoveNode@7105",
+				"move type": 3,
+				"new path": "res://assets/godot_icon_500_green.jpg",
+				"new pos x": 0,
+				"new pos y": 0,
+				"pic": "@PictureNode@5596:<GraphNode#565257982462>",
+				"pic name": "@PictureNode@5596",
+				"sound dict": {
+					"new track": false,
+					"play sound": false,
+					"sound path": ""
+				}
+			}
+		],
+		"pos x": 778,
+		"pos y": 800,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "New picture.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 312
+	},
+	"5": {
+		"auto_lines": true,
+		"auto_width": false,
+		"dialogue center x": true,
+		"dialogue center y": false,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": true,
+		"include size": false,
+		"lines": 2,
+		"name": "",
+		"new": true,
+		"node name": "@DialogueNode@7338",
+		"paired": false,
+		"pics to move": [],
+		"picture to end": [
+			"@PictureNode@5596"
+		],
+		"pos x": 310,
+		"pos y": 690,
+		"show frame": false,
+		"speaker option": 0,
+		"start picture": false,
+		"text": "If a picture is connected to the first textbox\nin a scene, it has the option to display text.",
+		"text preset selected": 0,
+		"type": "text",
+		"width": 1248
+	},
+	"6": {
+		"auto_width": true,
+		"dialogue sound dict": {
+			"change bgm": false,
+			"sound path": ""
+		},
+		"end picture": false,
+		"name": "",
+		"new": false,
+		"node name": "@DialogueNode@7572",
+		"pics to move": [],
+		"speaker option": 0,
+		"start picture": false,
+		"text": "This is useful for showing information like\nthe time or the precise location of the picture.",
+		"type": "text",
+		"width": 1248,
+		"wipe": true
+	},
+	"7": {
+		"node name": "@TransitionNode@7777",
+		"trans dict": {
+			"end card": false,
+			"fade duration": 3,
+			"line color": "1100d6ff",
+			"moon color": "c0c0c0ff",
+			"moon phrase": "",
+			"next script": "res://JSONs/demo/picture_demo/picture-demo-3.json",
+			"phrase color": "ffffffff",
+			"trans type": 1
+		},
+		"type": "transition"
+	}
+}

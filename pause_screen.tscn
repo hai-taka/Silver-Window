@@ -1,0 +1,119 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2c1e4pxulr72"]
+
+[ext_resource type="Script" path="res://pause_screen.gd" id="1_3ba0h"]
+[ext_resource type="Theme" uid="uid://1h40sciui403" path="res://themes/main_menu_theme.tres" id="2_88tiu"]
+[ext_resource type="Script" path="res://pause_menu.gd" id="3_6fntb"]
+[ext_resource type="StyleBox" uid="uid://5ca6lc8c87lc" path="res://themes/Styleboxes/pause_menu_stybox_texture.tres" id="4_woiu5"]
+[ext_resource type="PackedScene" uid="uid://dkhfs8w00kk13" path="res://options_menu.tscn" id="5_owwp2"]
+
+[node name="PauseScreen" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_3ba0h")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_88tiu")
+metadata/_edit_lock_ = true
+
+[node name="PauseBG" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.501961)
+metadata/_edit_lock_ = true
+
+[node name="PauseMenu" type="MarginContainer" parent="Control" node_paths=PackedStringArray("pause_screen")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_6fntb")
+pause_screen = NodePath("../..")
+menu_panel_stylebox = ExtResource("4_woiu5")
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/PauseMenu"]
+texture_filter = 1
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_woiu5")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PauseMenu/PanelContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PauseMenu/PanelContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="Control/PauseMenu/PanelContainer/MarginContainer/VBoxContainer" groups=["pause_menu_buttons"]]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../MainMenuButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../SaveButton")
+focus_next = NodePath("../SaveButton")
+focus_previous = NodePath("../MainMenuButton")
+text = "Resume"
+
+[node name="SaveButton" type="Button" parent="Control/PauseMenu/PanelContainer/MarginContainer/VBoxContainer" groups=["pause_menu_buttons"]]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../ResumeButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../OptionsButton")
+focus_next = NodePath("../OptionsButton")
+focus_previous = NodePath("../ResumeButton")
+text = "Save"
+
+[node name="OptionsButton" type="Button" parent="Control/PauseMenu/PanelContainer/MarginContainer/VBoxContainer" groups=["pause_menu_buttons"]]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../SaveButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../MainMenuButton")
+focus_next = NodePath("../MainMenuButton")
+focus_previous = NodePath("../SaveButton")
+text = "Options"
+
+[node name="MainMenuButton" type="Button" parent="Control/PauseMenu/PanelContainer/MarginContainer/VBoxContainer" groups=["pause_menu_buttons"]]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../ResumeButton")
+focus_next = NodePath("../ResumeButton")
+focus_previous = NodePath("../OptionsButton")
+text = "Main Menu"
+
+[node name="OptionsMenu" parent="." instance=ExtResource("5_owwp2")]
+visible = false
+from_pause = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Control/PauseMenu/PanelContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Control/PauseMenu/PanelContainer/MarginContainer/VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="Control/PauseMenu/PanelContainer/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Control/PauseMenu/PanelContainer/MarginContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
